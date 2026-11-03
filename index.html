@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roselle Noha - হ্যান্ডমেড চুড়ি, ফুল ও হোমমেড আচার</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
+        body { font-family: 'Hind Siliguri', sans-serif; }
+    </style>
+</head>
+<body class="bg-amber-50 text-neutral-800">
+
+    <!-- Top Notification Bar -->
+    <div class="bg-rose-700 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium">
+        🌸 ঐতিহ্যবাহী হ্যান্ডমেড চুড়ি, তাজা ফুল এবং সুস্বাদু হোমমেড আচার অর্ডার করুন ঘরে বসেই! ক্যাশ অন ডেলিভারি উপলব্ধ।
+    </div>
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <span class="text-2xl sm:text-3xl font-bold text-rose-700">Roselle Noha</span>
+            </a>
+
+            <!-- Search Bar -->
+            <div class="hidden md:flex items-center flex-1 max-w-md mx-8">
+                <div class="relative w-full">
+                    <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="চুড়ি, ফুল বা আচার খুঁজুন..." class="w-full bg-neutral-100 border border-neutral-300 rounded-full py-2 px-4 pl-10 focus:outline-none focus:border-rose-500 text-sm">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-neutral-400"></i>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex items-center gap-3">
+                <!-- Secret Admin Login Button -->
+                <button onclick="openAdminModal()" class="text-xs bg-neutral-100 hover:bg-neutral-200 text-neutral-600 px-3 py-2 rounded-full font-medium transition flex items-center gap-1">
+                    <i class="fa-solid fa-user-shield"></i> অ্যাডমিন
+                </button>
+
+                <!-- Cart Trigger Button -->
+                <button onclick="toggleCart()" class="relative bg-rose-50 hover:bg-rose-100 text-rose-700 px-4 py-2 rounded-full flex items-center space-x-2 transition">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="font-semibold hidden sm:inline">কার্ট</span>
+                    <span id="cartCount" class="bg-rose-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-rose-100 via-orange-50 to-amber-100 py-12 px-4 text-center">
+        <div class="max-w-3xl mx-auto">
+            <h1 class="text-3xl sm:text-5xl font-bold text-rose-800 mb-4">রোজেল নোহা কালেকশন</h1>
+            <p class="text-neutral-600 text-base sm:text-lg mb-6">বিশেষ মুহূর্তের জন্য আকর্ষণীয় হ্যান্ডমেড চুড়ি, ফুলের গহনা এবং খাঁটি মাটির স্বাদের হোমমেড আচার।</p>
+            <div class="flex justify-center gap-3">
+                <a href="#shopSection" class="bg-rose-700 hover:bg-rose-800 text-white font-medium px-6 py-3 rounded-full shadow transition">শপিং শুরু করুন</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Shop Container -->
+    <main id="shopSection" class="max-w-7xl mx-auto px-4 py-8">
+        
+        <!-- Category Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
+            <button onclick="filterCategory('all')" class="cat-btn active-cat bg-rose-700 text-white px-5 py-2 rounded-full text-sm font-medium transition shadow-sm">সব প্রোডাক্ট</button>
+            <button onclick="filterCategory('bangles')" class="cat-btn bg-white hover:bg-rose-50 text-neutral-700 border border-neutral-300 px-5 py-2 rounded-full text-sm font-medium transition shadow-sm">হ্যান্ডমেড চুড়ি</button>
+            <button onclick="filterCategory('flowers')" class="cat-btn bg-white hover:bg-rose-50 text-neutral-700 border border-neutral-300 px-5 py-2 rounded-full text-sm font-medium transition shadow-sm">ফুল ও গহনা</button>
+            <button onclick="filterCategory('pickles')" class="cat-btn bg-white hover:bg-rose-50 text-neutral-700 border border-neutral-300 px-5 py-2 rounded-full text-sm font-medium transition shadow-sm">হোমমেড আচার</button>
+        </div>
+
+        <!-- Product Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- JavaScript দিয়ে প্রোডাক্ট লোড হবে -->
+        </div>
+    </main>
+
+    <!-- Shopping Cart Sidebar Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-50 transition-opacity" onclick="toggleCart()"></div>
+        <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
+            <div class="w-screen max-w-md bg-white shadow-xl flex flex-col">
+                <div class="flex items-center justify-between px-6 py-4 bg-rose-700 text-white">
+                    <h2 class="text-lg font-bold flex items-center gap-2"><i class="fa-solid fa-bag-shopping"></i> আপনার শপিং ব্যাগ</h2>
+                    <button onclick="toggleCart()" class="text-white hover:text-neutral-200 text-xl font-bold">&times;</button>
+                </div>
+                <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-neutral-100">
+                    <!-- Cart items -->
+                </div>
+                <div class="border-t border-neutral-200 p-6 bg-neutral-50">
+                    <div class="flex justify-between text-base font-semibold text-neutral-900 mb-4">
+                        <span>মোট মূল্য:</span>
+                        <span id="cartTotal">৳ ০</span>
+                    </div>
+                    <button onclick="openCheckoutModal()" id="checkoutBtn" class="w-full bg-rose-700 hover:bg-rose-800 text-white font-medium py-3 rounded-xl shadow transition disabled:opacity-50">অর্ডার কনফার্ম করুন</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-neutral-500 hover:text-neutral-800 text-xl font-bold">&times;</button>
+            <h3 class="text-xl font-bold text-rose-800 mb-4">অর্ডার সম্পন্ন করতে তথ্য দিন</h3>
+            
+            <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">আপনার নাম *</label>
+                    <input type="text" id="custName" required class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">মোবাইল নম্বর (বিকাশ/নগদ সহ) *</label>
+                    <input type="tel" id="custPhone" required placeholder="01XXXXXXXXX" class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">সম্পূর্ণ ঠিকানা ও এলাকা *</label>
+                    <textarea id="custAddress" required rows="2" placeholder="বাসা নং, রোড, থানা, জেলা" class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500"></textarea>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">ডেলিভারি এলাকা নির্বাচন করুন *</label>
+                    <select id="deliveryArea" onchange="updateTotal()" class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                        <option value="70">ঢাকার ভেতরে (৳ ৭০)</option>
+                        <option value="130">ঢাকার বাইরে (৳ ১৩০)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">পেমেন্ট মেথড *</label>
+                    <select id="paymentMethod" onchange="toggleTrxField()" class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                        <option value="COD">ক্যাশ অন ডেলিভারি (Cash on Delivery)</option>
+                        <option value="Bkash">বিকাশ সেন্ড মানি (01XXXXXXXXX)</option>
+                        <option value="Nagad">নগদ সেন্ড মানি (01XXXXXXXXX)</option>
+                    </select>
+                </div>
+                <div id="trxContainer" class="hidden">
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">ট্রানজেকশন আইডি (TrxID) *</label>
+                    <input type="text" id="trxId" placeholder="যেমন: 9N74A..." class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                </div>
+                <div class="bg-amber-50 p-3 rounded-lg text-xs text-neutral-600">
+                    পণ্য মূল্য + ডেলিভারি চার্জ সহ মোট প্রদেয় পরিমাণ: <span id="modalFinalTotal" class="font-bold text-rose-700 text-sm">৳ ০</span>
+                </div>
+                <button type="submit" class="w-full bg-rose-700 hover:bg-rose-800 text-white font-medium py-3 rounded-xl shadow transition">অর্ডার প্লেস করুন</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Success & WhatsApp Redirect Modal -->
+    <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center shadow-2xl">
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-neutral-800 mb-2">অর্ডার সফলভাবে সেভ হয়েছে!</h3>
+            <p class="text-neutral-600 text-sm mb-4">আপনার অর্ডারটি আমাদের ডাটাবেসে সেভ হয়েছে। দ্রুত প্রসেসিংয়ের জন্য হোয়াটসঅ্যাপে আমাদের নোটিফিকেশন মেসেজটি পাঠান।</p>
+            <div id="orderSummaryText" class="bg-neutral-100 p-3 rounded-lg text-xs text-neutral-700 text-left mb-6 font-mono"></div>
+            
+            <a id="whatsappSendBtn" href="#" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-medium shadow flex items-center justify-center gap-2 mb-2 transition">
+                <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp-এ নোটিফিকেশন পাঠান
+            </a>
+            <button onclick="closeSuccessModal()" class="w-full text-neutral-500 text-xs py-2">বন্ধ করুন</button>
+        </div>
+    </div>
+
+    <!-- Admin Login Password Modal -->
+    <div id="adminAuthModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl relative">
+            <button onclick="closeAdminAuthModal()" class="absolute top-4 right-4 text-neutral-500 hover:text-neutral-800 text-xl font-bold">&times;</button>
+            <h3 class="text-xl font-bold text-neutral-800 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-lock text-rose-700"></i> অ্যাডমিন লগইন
+            </h3>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">সিক্রেট পাসওয়ার্ড দিন</label>
+                    <input type="password" id="adminPassword" required placeholder="পাসওয়ার্ড লিখুন" class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                    <p id="loginError" class="text-xs text-red-600 mt-1 hidden">পাসওয়ার্ড সঠিক নয়!</p>
+                </div>
+                <button type="submit" class="w-full bg-neutral-900 hover:bg-black text-white font-medium py-2.5 rounded-xl shadow transition">প্রবেশ করুন</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Secret Admin Dashboard Drawer / Panel -->
+    <div id="adminPanelModal" class="fixed inset-0 z-50 bg-black bg-opacity-50 flex items-center justify-center p-2 sm:p-6 hidden">
+        <div class="bg-white rounded-2xl max-w-5xl w-full h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+            <!-- Admin Header -->
+            <div class="bg-neutral-900 text-white px-6 py-4 flex items-center justify-between">
+                <div>
+                    <h2 class="text-xl font-bold flex items-center gap-2"><i class="fa-solid fa-chart-line text-rose-500"></i> Roselle Noha - অ্যাডমিন প্যানেল</h2>
+                    <p class="text-xs text-neutral-400">সকল অর্ডারের তালিকা ও স্ট্যাটাস</p>
+                </div>
+                <div class="flex items-center gap-3">
+                    <button onclick="clearAllOrders()" class="text-xs bg-red-800 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg transition">সব ডিলিট করুন</button>
+                    <button onclick="closeAdminPanel()" class="text-white hover:text-neutral-300 text-2xl font-bold">&times;</button>
+                </div>
+            </div>
+
+            <!-- Admin Content / Table -->
+            <div class="flex-1 overflow-y-auto p-4 sm:p-6 bg-neutral-50">
+                <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-x-auto">
+                    <table class="w-full text-left text-xs sm:text-sm">
+                        <thead class="bg-neutral-100 text-neutral-700 uppercase font-semibold border-b border-neutral-200">
+                            <tr>
+                                <th class="p-3">অর্ডার আইডি</th>
+                                <th class="p-3">তারিখ</th>
+                                <th class="p-3">কাস্টমার তথ্য</th>
+                                <th class="p-3">আইটেমস</th>
+                                <th class="p-3">মোট টাকা</th>
+                                <th class="p-3">পেমেন্ট</th>
+                                <th class="p-3">স্ট্যাটাস</th>
+                                <th class="p-3 text-center">অ্যাকশন</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminOrderTable" class="divide-y divide-neutral-200">
+                            <!-- Orders will load dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-neutral-300 py-8 px-4 mt-12 text-center text-sm">
+        <p class="font-bold text-white text-lg mb-2">Roselle Noha</p>
+        <p class="text-neutral-400 mb-4">হ্যান্ডমেড চুড়ি, ফুল ও খাঁটি হোমমেড আচারের বিশ্বস্ত অনলাইন শপ।</p>
+        <p>&copy; 2026 Roselle Noha. All Rights Reserved.</p>
+    </footer>
+
+    <!-- JavaScript Application Logic -->
+    <script>
+        // *** CONFIGURATION ***
+        // আপনার ওয়াটসঅ্যাপ নম্বর (কান্ট্রি কোড 880 সহ লিখুন)
+        const MY_WHATSAPP_NUMBER = "8801603198343"; 
+        
+        // সিক্রেট অ্যাডমিন পাসওয়ার্ড
+        const ADMIN_SECRET_KEY = "roselle123"; 
+
+        // Product Database
+        const products = [
+            { id: 1, name: "রেেশমি সুতার চুড়ি সেট (গোল্ডেন টাচ)", category: "bangles", price: 450, image: "https://images.unsplash.com/photo-1611591472092-23c2a61361b7?w=500&auto=format&fit=crop&q=60" },
+            { id: 2, name: "কাঁচ ও পাথরের এক্সক্লুসিভ ব্রাইডাল চুড়ি", category: "bangles", price: 850, image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=60" },
+            { id: 3, name: "ঐতিহ্যবাহী লাল-সাদা কাঁচের চুড়ি সেট", category: "bangles", price: 320, image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=60" },
+            { id: 4, name: "হলুদ ও মেহেদি সন্ধ্যার কৃত্রিম ফুলের গহনা সেট", category: "flowers", price: 650, image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&auto=format&fit=crop&q=60" },
+            { id: 5, name: "তাজা গোলাপ ও রজনীগন্ধার গজরা", category: "flowers", price: 250, image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=500&auto=format&fit=crop&q=60" },
+            { id: 6, name: "স্পেশাল টক-ঝাল-মিষ্টি আমের আচার (৫০০ গ্রাম)", category: "pickles", price: 380, image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&auto=format&fit=crop&q=60" },
+            { id: 7, name: "খাঁটি রসুনের স্পেশাল হোমমেড আচার (৪০০ গ্রাম)", category: "pickles", price: 420, image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500&auto=format&fit=crop&q=60" },
+            { id: 8, name: "নাগা মরিচ ও তেঁতুলের আচার (৩০০ গ্রাম)", category: "pickles", price: 350, image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&auto=format&fit=crop&q=60" }
+        ];
+
+        let cart = [];
+        let currentCategory = 'all';
+
+        // Render Products
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+            
+            if(items.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-neutral-500">কোনো প্রোডাক্ট পাওয়া যায়নি।</div>`;
+                return;
+            }
+
+            items.forEach(product => {
+                grid.innerHTML += `
+                    <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden border border-neutral-200 flex flex-col justify-between">
+                        <div>
+                            <div class="h-48 overflow-hidden bg-neutral-100">
+                                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-semibold text-neutral-800 text-base mb-1 line-clamp-1">${product.name}</h3>
+                                <p class="text-rose-700 font-bold text-lg">৳ ${product.price}</p>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <button onclick="addToCart(${product.id})" class="w-full bg-rose-50 hover:bg-rose-700 text-rose-700 hover:text-white border border-rose-200 font-medium py-2 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i> কার্টে যোগ করুন
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+        }
+
+        // Filter Category
+        function filterCategory(category) {
+            currentCategory = category;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-rose-700', 'text-white');
+                btn.classList.add('bg-white', 'text-neutral-700', 'border', 'border-neutral-300');
+            });
+            event.target.classList.remove('bg-white', 'text-neutral-700', 'border');
+            event.target.classList.add('bg-rose-700', 'text-white');
+
+            filterProducts();
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            let filtered = products;
+
+            if(currentCategory !== 'all') {
+                filtered = filtered.filter(p => p.category === currentCategory);
+            }
+            if(query) {
+                filtered = filtered.filter(p => p.name.toLowerCase().includes(query));
+            }
+            renderProducts(filtered);
+        }
+
+        // Cart Actions
+        function toggleCart() {
+            const drawer = document.getElementById('cartDrawer');
+            drawer.classList.toggle('hidden');
+            renderCartItems();
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existing = cart.find(item => item.id === productId);
+
+            if(existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+
+            updateCartCount();
+            renderCartItems();
+            toggleCart();
+        }
+
+        function updateCartCount() {
+            const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cartCount').innerText = totalCount;
+        }
+
+        function changeQty(productId, delta) {
+            const item = cart.find(p => p.id === productId);
+            if(item) {
+                item.qty += delta;
+                if(item.qty <= 0) {
+                    cart = cart.filter(p => p.id !== productId);
+                }
+            }
+            updateCartCount();
+            renderCartItems();
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cartItemsContainer');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            container.innerHTML = '';
+
+            if(cart.length === 0) {
+                container.innerHTML = `<p class="text-center text-neutral-400 py-12">আপনার ব্যাগটি খালি আছে।</p>`;
+                document.getElementById('cartTotal').innerText = '৳ ০';
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            checkoutBtn.disabled = false;
+            let subtotal = 0;
+
+            cart.forEach(item => {
+                subtotal += item.price * item.qty;
+                container.innerHTML += `
+                    <div class="flex items-center justify-between py-2">
+                        <div class="flex items-center space-x-3">
+                            <img src="${item.image}" class="w-12 h-12 object-cover rounded-lg">
+                            <div>
+                                <h4 class="text-sm font-semibold text-neutral-800 line-clamp-1">${item.name}</h4>
+                                <p class="text-xs text-rose-700 font-bold">৳ ${item.price} × ${item.qty}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="changeQty(${item.id}, -1)" class="w-7 h-7 bg-neutral-100 rounded-full font-bold text-sm">-</button>
+                            <span class="text-sm font-semibold">${item.qty}</span>
+                            <button onclick="changeQty(${item.id}, 1)" class="w-7 h-7 bg-neutral-100 rounded-full font-bold text-sm">+</button>
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('cartTotal').innerText = `৳ ${subtotal}`;
+        }
+
+        // Checkout Modal Functions
+        function openCheckoutModal() {
+            if(cart.length === 0) return;
+            toggleCart();
+            document.getElementById('checkoutModal').classList.remove('hidden');
+            updateTotal();
+        }
+
+        function closeCheckoutModal() {
+            document.getElementById('checkoutModal').classList.add('hidden');
+        }
+
+        function toggleTrxField() {
+            const method = document.getElementById('paymentMethod').value;
+            const trxContainer = document.getElementById('trxContainer');
+            if(method === 'Bkash' || method === 'Nagad') {
+                trxContainer.classList.remove('hidden');
+                document.getElementById('trxId').required = true;
+            } else {
+                trxContainer.classList.add('hidden');
+                document.getElementById('trxId').required = false;
+            }
+        }
+
+        function getCartSubtotal() {
+            return cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+        }
+
+        function updateTotal() {
+            const deliveryFee = parseInt(document.getElementById('deliveryArea').value);
+            const finalTotal = getCartSubtotal() + deliveryFee;
+            document.getElementById('modalFinalTotal').innerText = `৳ ${finalTotal}`;
+        }
+
+        // ORDER SUBMIT (Stores to LocalStorage Admin Data & Generates WhatsApp Link)
+        function submitOrder(e) {
+            e.preventDefault();
+            const name = document.getElementById('custName').value;
+            const phone = document.getElementById('custPhone').value;
+            const address = document.getElementById('custAddress').value;
+            const deliveryFee = parseInt(document.getElementById('deliveryArea').value);
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const trxId = document.getElementById('trxId').value || 'N/A';
+            const total = getCartSubtotal() + deliveryFee;
+
+            const orderId = 'RN-' + Math.floor(100000 + Math.random() * 900000);
+            const orderDate = new Date().toLocaleString('bn-BD');
+
+            // Product List Text
+            let itemsSummary = cart.map(i => `${i.name} (x${i.qty})`).join(', ');
+
+            // Construct Order Object
+            const newOrder = {
+                id: orderId,
+                date: orderDate,
+                name: name,
+                phone: phone,
+                address: address,
+                items: itemsSummary,
+                total: total,
+                payment: paymentMethod + (paymentMethod !== 'COD' ? ` (TrxID: ${trxId})` : ''),
+                status: 'Pending'
+            };
+
+            // Save Order to LocalStorage Database
+            let existingOrders = JSON.parse(localStorage.getItem('roselle_orders')) || [];
+            existingOrders.unshift(newOrder); // newest first
+            localStorage.setItem('roselle_orders', JSON.stringify(existingOrders));
+
+            // Generate WhatsApp Text Message
+            let waText = `🛍️ *NEW ORDER - ROSELLE NOHA*\n`;
+            waText += `━━━━━━━━━━━━━━━━━━━━━\n`;
+            waText += `🆔 *Order ID:* ${orderId}\n`;
+            waText += `👤 *Customer:* ${name}\n`;
+            waText += `📞 *Phone:* ${phone}\n`;
+            waText += `📍 *Address:* ${address}\n`;
+            waText += `📦 *Items:* ${itemsSummary}\n`;
+            waText += `💳 *Payment:* ${paymentMethod} ${paymentMethod !== 'COD' ? '(TrxID: ' + trxId + ')' : ''}\n`;
+            waText += `💰 *Total Amount:* ৳ ${total}\n`;
+            waText += `━━━━━━━━━━━━━━━━━━━━━\n`;
+            waText += `ধন্যবাদ! অর্ডারটি প্রসেস করুন।`;
+
+            const waLink = `https://wa.me/${MY_WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
+            document.getElementById('whatsappSendBtn').href = waLink;
+
+            let summaryHtml = `
+                <strong>অর্ডার আইডি:</strong> ${orderId}<br>
+                <strong>নাম:</strong> ${name}<br>
+                <strong>ফোন:</strong> ${phone}<br>
+                <strong>মোট মূল্য:</strong> ৳ ${total}
+            `;
+
+            document.getElementById('orderSummaryText').innerHTML = summaryHtml;
+            closeCheckoutModal();
+            document.getElementById('successModal').classList.remove('hidden');
+
+            // Reset Cart
+            cart = [];
+            updateCartCount();
+            document.getElementById('orderForm').reset();
+        }
+
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        // *** ADMIN PANEL FUNCTIONS ***
+        function openAdminModal() {
+            document.getElementById('adminAuthModal').classList.remove('hidden');
+        }
+
+        function closeAdminAuthModal() {
+            document.getElementById('adminAuthModal').classList.add('hidden');
+            document.getElementById('loginError').classList.add('hidden');
+            document.getElementById('adminPassword').value = '';
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const pwd = document.getElementById('adminPassword').value;
+            if(pwd === ADMIN_SECRET_KEY) {
+                closeAdminAuthModal();
+                loadAdminOrders();
+                document.getElementById('adminPanelModal').classList.remove('hidden');
+            } else {
+                document.getElementById('loginError').classList.remove('hidden');
+            }
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('adminPanelModal').classList.add('hidden');
+        }
+
+        function loadAdminOrders() {
+            const table = document.getElementById('adminOrderTable');
+            let orders = JSON.parse(localStorage.getItem('roselle_orders')) || [];
+
+            if(orders.length === 0) {
+                table.innerHTML = `<tr><td colspan="8" class="text-center py-8 text-neutral-400">কোনো অর্ডার পাওয়া যায়নি।</td></tr>`;
+                return;
+            }
+
+            table.innerHTML = '';
+            orders.forEach((order, index) => {
+                let statusBg = order.status === 'Pending' ? 'bg-amber-100 text-amber-800' : 'bg-green-100 text-green-800';
+                table.innerHTML += `
+                    <tr class="hover:bg-neutral-50 transition">
+                        <td class="p-3 font-bold text-rose-700">${order.id}</td>
+                        <td class="p-3 text-xs text-neutral-500">${order.date}</td>
+                        <td class="p-3">
+                            <div class="font-semibold text-neutral-800">${order.name}</div>
+                            <div class="text-xs text-neutral-500">${order.phone}</div>
+                            <div class="text-xs text-neutral-400 line-clamp-1">${order.address}</div>
+                        </td>
+                        <td class="p-3 text-xs text-neutral-700 font-medium max-w-xs">${order.items}</td>
+                        <td class="p-3 font-bold text-neutral-900">৳ ${order.total}</td>
+                        <td class="p-3 text-xs font-semibold">${order.payment}</td>
+                        <td class="p-3">
+                            <button onclick="toggleStatus(${index})" class="px-2.5 py-1 rounded-full text-xs font-bold ${statusBg}">
+                                ${order.status}
+                            </button>
+                        </td>
+                        <td class="p-3 text-center">
+                            <button onclick="deleteOrder(${index})" class="text-red-600 hover:text-red-800 font-bold p-1">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        function toggleStatus(index) {
+            let orders = JSON.parse(localStorage.getItem('roselle_orders')) || [];
+            orders[index].status = orders[index].status === 'Pending' ? 'Delivered' : 'Pending';
+            localStorage.setItem('roselle_orders', JSON.stringify(orders));
+            loadAdminOrders();
+        }
+
+        function deleteOrder(index) {
+            if(confirm('আপনি কি এই অর্ডারটি মুছে ফেলতে চান?')) {
+                let orders = JSON.parse(localStorage.getItem('roselle_orders')) || [];
+                orders.splice(index, 1);
+                localStorage.setItem('roselle_orders', JSON.stringify(orders));
+                loadAdminOrders();
+            }
+        }
+
+        function clearAllOrders() {
+            if(confirm('আপনি কি সকল অর্ডার ডাটাবেস থেকে মুছে ফেলতে চান?')) {
+                localStorage.removeItem('roselle_orders');
+                loadAdminOrders();
+            }
+        }
+
+        // Initial Load
+        renderProducts(products);
+    </script>
+</body>
+</html>
