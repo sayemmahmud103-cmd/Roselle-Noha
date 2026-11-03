@@ -3,1052 +3,903 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Roselle Noha - হ্যান্ডমেড চুড়ি, তাজা ফুল ও হোমমেড আচারের এক্সক্লুসিভ কালেকশন">
-    <title>Roselle Noha | হ্যান্ডমেড লাক্সারি কালেকশন</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌸</text></svg>">
+    <title>Roselle Noha - এক্সক্লুসিভ হ্যান্ডমেড চুড়ি, ফুল ও হোমমেড আচার</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            50: '#fdf2f8', 100: '#fce7f3', 200: '#fbcfe8',
-                            300: '#f9a8d4', 400: '#f472b6', 500: '#ec4899',
-                            600: '#db2777', 700: '#be185d', 800: '#9d174d', 900: '#831843'
-                        }
-                    },
-                    animation: {
-                        'float': 'float 6s ease-in-out infinite',
-                        'fadeInUp': 'fadeInUp 0.6s ease-out forwards',
-                        'slideInRight': 'slideInRight 0.3s ease-out',
-                        'pulse-slow': 'pulseSlow 3s ease-in-out infinite',
-                    },
-                    keyframes: {
-                        float: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } },
-                        fadeInUp: { 'from': { opacity: 0, transform: 'translateY(30px)' }, 'to': { opacity: 1, transform: 'translateY(0)' } },
-                        slideInRight: { 'from': { transform: 'translateX(100%)' }, 'to': { transform: 'translateX(0)' } },
-                        pulseSlow: { '0%,100%': { opacity: '0.5', transform: 'scale(1)' }, '50%': { opacity: '0.8', transform: 'scale(1.05)' } }
-                    }
-                }
-            }
-        }
-    </script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap');
-        * { font-family: 'Hind Siliguri', sans-serif; -webkit-tap-highlight-color: transparent; }
-        html { scroll-behavior: smooth; }
-        ::-webkit-scrollbar { width: 8px; height: 8px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #ec4899, #db2777); border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: linear-gradient(180deg, #db2777, #be185d); }
-        .cat-btn {
-            background: rgba(255, 255, 255, 0.7); color: #525252;
-            border: 1px solid rgba(0, 0, 0, 0.08); padding: 10px 24px;
-            border-radius: 999px; font-size: 14px; font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            backdrop-filter: blur(10px);
-        }
-        .dark .cat-btn { background: rgba(38, 38, 38, 0.7); color: #d4d4d4; border-color: rgba(255, 255, 255, 0.08); }
-        .cat-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(236, 72, 153, 0.2); border-color: rgba(236, 72, 153, 0.3); }
-        .cat-btn.active-cat { background: linear-gradient(135deg, #db2777, #ec4899); color: white; border-color: transparent; box-shadow: 0 8px 24px rgba(219, 39, 119, 0.4); }
-        .product-card { animation: fadeInUp 0.6s ease-out forwards; opacity: 0; }
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
-        input[type="radio"]:checked + div { border-color: #ec4899; background: rgba(236, 72, 153, 0.05); }
-        ::selection { background: rgba(236, 72, 153, 0.3); color: inherit; }
-        body.modal-open { overflow: hidden; }
-        .district-select, .thana-select {
-            appearance: none; -webkit-appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23ec4899' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px;
-        }
+        body { font-family: 'Hind Siliguri', sans-serif; }
     </style>
 </head>
-<body class="bg-gradient-to-br from-rose-50 via-amber-50 to-pink-50 dark:from-neutral-950 dark:via-neutral-900 dark:to-neutral-950 text-neutral-800 dark:text-neutral-100 transition-colors duration-500">
+<body class="bg-amber-50/50 text-neutral-800">
 
-    <!-- Floating Decorative -->
-    <div class="fixed top-20 left-10 text-6xl opacity-10 animate-float pointer-events-none hidden lg:block">🌸</div>
-    <div class="fixed bottom-20 right-10 text-8xl opacity-10 animate-float pointer-events-none hidden lg:block" style="animation-delay: 2s;">🌺</div>
-    <div class="fixed top-1/3 right-20 text-5xl opacity-10 animate-float pointer-events-none hidden lg:block" style="animation-delay: 4s;">🌷</div>
-
-    <!-- Top Notification -->
-    <div class="relative bg-gradient-to-r from-brand-700 via-pink-600 to-rose-600 text-white text-xs sm:text-sm py-2.5 px-4 text-center font-medium overflow-hidden">
-        <span class="relative">✨ হবিগঞ্জ সদরে ডেলিভারি ৳৬০ | সারা বাংলাদেশে ৳১২০ ✨</span>
+    <!-- Top Notification Bar -->
+    <div class="bg-rose-700 text-white text-xs sm:text-sm py-2 px-4 text-center font-medium tracking-wide">
+        🎉 ১০০০ টাকা বা তার বেশি অর্ডার করলেই ডেলিভারি সম্পূর্ণ ফ্রি! ক্যাশ অন ডেলিভারি উপলব্ধ।
     </div>
 
-    <!-- Header -->
-    <header class="sticky top-0 z-40 backdrop-blur-xl bg-white/70 dark:bg-neutral-900/70 border-b border-white/20 dark:border-neutral-800 shadow-lg shadow-rose-100/20 dark:shadow-none transition-colors duration-500">
-        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-            <a href="#" class="flex items-center gap-2 group">
-                <div class="w-10 h-10 bg-gradient-to-br from-brand-500 to-pink-600 rounded-xl flex items-center justify-center shadow-lg shadow-brand-500/30 group-hover:scale-110 transition-transform">
-                    <span class="text-white text-xl">🌸</span>
-                </div>
-                <div class="hidden sm:block">
-                    <h1 class="text-xl font-bold bg-gradient-to-r from-brand-700 to-pink-600 dark:from-brand-300 dark:to-pink-300 bg-clip-text text-transparent">Roselle Noha</h1>
-                    <p class="text-[10px] text-neutral-500 dark:text-neutral-400 -mt-1 tracking-widest uppercase">Handmade Luxury</p>
-                </div>
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <span class="text-2xl sm:text-3xl font-bold text-rose-700 tracking-tight">Roselle Noha</span>
             </a>
 
-            <div class="hidden md:flex items-center flex-1 max-w-md mx-4">
-                <div class="relative w-full group">
-                    <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="চুড়ি, ফুল বা আচার খুঁজুন..." 
-                        class="w-full bg-neutral-100/80 dark:bg-neutral-800/80 border border-neutral-200/50 dark:border-neutral-700 rounded-2xl py-2.5 px-4 pl-11 focus:outline-none focus:ring-2 focus:ring-brand-500/50 focus:border-brand-500 text-sm transition-all placeholder:text-neutral-400">
-                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-neutral-400 group-focus-within:text-brand-500 transition"></i>
+            <!-- Search Bar -->
+            <div class="hidden md:flex items-center flex-1 max-w-md mx-8">
+                <div class="relative w-full">
+                    <input type="text" id="searchInput" onkeyup="filterProducts()" placeholder="চুড়ি, ফুল বা আচার খুঁজুন..." class="w-full bg-neutral-100 border border-neutral-200 rounded-full py-2 px-4 pl-10 focus:outline-none focus:border-rose-500 text-sm">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-neutral-400"></i>
                 </div>
             </div>
 
-            <div class="flex items-center gap-2">
-                <button onclick="toggleDarkMode()" class="w-10 h-10 rounded-xl bg-neutral-100 dark:bg-neutral-800 hover:bg-brand-50 dark:hover:bg-neutral-700 flex items-center justify-center transition group">
-                    <i id="darkIcon" class="fa-solid fa-moon text-neutral-600 dark:text-amber-300 group-hover:rotate-12 transition"></i>
-                </button>
-                <button onclick="openAuthModal('login')" class="hidden sm:flex items-center gap-2 bg-neutral-100 dark:bg-neutral-800 hover:bg-brand-50 dark:hover:bg-neutral-700 px-3.5 py-2.5 rounded-xl transition text-sm font-semibold">
-                    <i id="userIcon" class="fa-solid fa-user text-brand-600 dark:text-brand-400"></i>
-                    <span id="userNavText" class="text-neutral-700 dark:text-neutral-200">লগইন</span>
-                </button>
-                <button onclick="toggleCart()" class="relative bg-gradient-to-br from-brand-600 to-pink-600 hover:from-brand-700 hover:to-pink-700 text-white px-4 py-2.5 rounded-xl flex items-center gap-2 transition shadow-lg shadow-brand-500/30 hover:shadow-brand-500/50 group">
-                    <i class="fa-solid fa-bag-shopping group-hover:scale-110 transition"></i>
-                    <span class="font-semibold hidden sm:inline text-sm">ব্যাগ</span>
-                    <span id="cartCount" class="bg-white/25 backdrop-blur text-white text-xs rounded-full min-w-[20px] h-5 flex items-center justify-center font-bold px-1">0</span>
+            <!-- User Auth & Cart Buttons -->
+            <div class="flex items-center gap-2 sm:gap-3">
+                <div id="userAccountSection">
+                    <button onclick="openAuthModal()" class="bg-neutral-100 hover:bg-neutral-200 text-neutral-700 px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-user"></i> <span id="authBtnText">লগইন / রেজিস্টার</span>
+                    </button>
+                </div>
+
+                <button onclick="toggleCart()" class="relative bg-rose-50 hover:bg-rose-100 text-rose-700 px-4 py-2 rounded-full flex items-center space-x-2 transition shadow-sm">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="font-semibold hidden sm:inline">ব্যাগ</span>
+                    <span id="cartCount" class="bg-rose-600 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-bold">0</span>
                 </button>
             </div>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section class="relative overflow-hidden py-20 px-4">
-        <div class="absolute inset-0 bg-gradient-to-br from-brand-100 via-pink-50 to-amber-100 dark:from-neutral-900 dark:via-neutral-900 dark:to-brand-950"></div>
-        <div class="absolute top-0 left-1/4 w-96 h-96 bg-brand-300/30 dark:bg-brand-700/20 rounded-full blur-3xl animate-pulse-slow"></div>
-        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-amber-300/30 dark:bg-amber-700/20 rounded-full blur-3xl animate-pulse-slow" style="animation-delay: 1.5s;"></div>
-        <div class="relative max-w-4xl mx-auto text-center">
-            <span class="inline-flex items-center gap-2 bg-white/70 dark:bg-neutral-800/70 backdrop-blur border border-brand-200 dark:border-neutral-700 text-brand-700 dark:text-brand-300 text-xs font-bold px-4 py-1.5 rounded-full shadow-sm">
-                <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-                হ্যান্ডমেড এক্সক্লুসিভ কালেকশন
-            </span>
-            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold mt-6 mb-5 leading-tight">
-                <span class="bg-gradient-to-r from-brand-700 via-pink-600 to-amber-600 dark:from-brand-300 dark:via-pink-300 dark:to-amber-300 bg-clip-text text-transparent">রোজেল নোহা</span>
-                <br>
-                <span class="text-neutral-800 dark:text-neutral-100 text-3xl sm:text-4xl lg:text-5xl">লাইফস্টাইল</span>
-            </h1>
-            <p class="text-neutral-600 dark:text-neutral-400 text-base sm:text-lg mb-8 leading-relaxed max-w-2xl mx-auto">
-                নিখুঁত হাতে তৈরি চুড়ি, তাজা ফুলের গহনা এবং খাঁটি মায়ের হাতের স্বাদের হোমমেড আচার — সবকিছু এক জায়গায়।
-            </p>
-            <div class="flex flex-wrap justify-center gap-3">
-                <a href="#shopSection" class="group bg-gradient-to-r from-brand-600 to-pink-600 hover:from-brand-700 hover:to-pink-700 text-white font-semibold px-8 py-3.5 rounded-2xl shadow-xl shadow-brand-500/30 hover:shadow-brand-500/50 transition-all transform hover:-translate-y-1 flex items-center gap-2">
-                    এখনই অর্ডার করুন <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition"></i>
-                </a>
-                <a href="#shopSection" class="bg-white/80 dark:bg-neutral-800/80 backdrop-blur border border-neutral-200 dark:border-neutral-700 hover:bg-white dark:hover:bg-neutral-800 font-semibold px-8 py-3.5 rounded-2xl transition flex items-center gap-2">
-                    <i class="fa-solid fa-star text-amber-500"></i> ফিচার্ড
-                </a>
-            </div>
-            <div class="grid grid-cols-3 gap-4 mt-14 max-w-2xl mx-auto">
-                <div class="bg-white/60 dark:bg-neutral-800/60 backdrop-blur rounded-2xl p-4 border border-white/50 dark:border-neutral-700">
-                    <div class="text-2xl sm:text-3xl font-bold text-brand-700 dark:text-brand-400" data-count="500">0</div>
-                    <div class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1">সন্তুষ্ট ক্রেতা</div>
-                </div>
-                <div class="bg-white/60 dark:bg-neutral-800/60 backdrop-blur rounded-2xl p-4 border border-white/50 dark:border-neutral-700">
-                    <div class="text-2xl sm:text-3xl font-bold text-brand-700 dark:text-brand-400" data-count="50">0</div>
-                    <div class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1">ইউনিক প্রোডাক্ট</div>
-                </div>
-                <div class="bg-white/60 dark:bg-neutral-800/60 backdrop-blur rounded-2xl p-4 border border-white/50 dark:border-neutral-700">
-                    <div class="text-2xl sm:text-3xl font-bold text-brand-700 dark:text-brand-400">৪.৯<span class="text-amber-500">★</span></div>
-                    <div class="text-xs sm:text-sm text-neutral-600 dark:text-neutral-400 mt-1">রেটিং</div>
-                </div>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-rose-100 via-orange-50 to-amber-100 py-16 px-4 text-center border-b border-rose-100">
+        <div class="max-w-3xl mx-auto">
+            <span class="bg-rose-200 text-rose-800 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">হ্যান্ডমেড এক্সক্লুসিভ কালেকশন</span>
+            <h1 class="text-3xl sm:text-5xl font-bold text-rose-900 mt-4 mb-4">রোজেল নোহা লাইফস্টাইল</h1>
+            <p class="text-neutral-600 text-base sm:text-lg mb-8 leading-relaxed">আপনার সাজসজ্জা এবং মুখের রুচি বাড়াতে আমাদের রয়েছে নিখুঁত হাতে তৈরি চুড়ি, তাজা ফুলের গহনা এবং খাঁটি মায়ের হাতের স্বাদের হোমমেড আচার।</p>
+            <div class="flex justify-center gap-3">
+                <a href="#shopSection" class="bg-rose-700 hover:bg-rose-800 text-white font-medium px-8 py-3.5 rounded-full shadow-md transition transform hover:-translate-y-0.5">এখনই অর্ডার করুন</a>
             </div>
         </div>
     </section>
 
-    <!-- Shop -->
-    <main id="shopSection" class="max-w-7xl mx-auto px-4 py-16">
-        <div class="text-center mb-10">
-            <h2 class="text-3xl sm:text-4xl font-bold text-neutral-800 dark:text-neutral-100 mb-3">আমাদের কালেকশন</h2>
-            <p class="text-neutral-500 dark:text-neutral-400">পছন্দের ক্যাটাগরি বেছে নিন</p>
+    <!-- Main Shop Container -->
+    <main id="shopSection" class="max-w-7xl mx-auto px-4 py-12">
+        
+        <!-- Category Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10">
+            <button onclick="filterCategory('all')" class="cat-btn active-cat bg-rose-700 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition shadow-sm">সব প্রোডাক্ট</button>
+            <button onclick="filterCategory('bangles')" class="cat-btn bg-white hover:bg-rose-50 text-neutral-700 border border-neutral-200 px-6 py-2.5 rounded-full text-sm font-semibold transition shadow-sm">হ্যান্ডমেড চুড়ি</button>
+            <button onclick="filterCategory('flowers')" class="cat-btn bg-white hover:bg-rose-50 text-neutral-700 border border-neutral-200 px-6 py-2.5 rounded-full text-sm font-semibold transition shadow-sm">ফুল ও গহনা</button>
+            <button onclick="filterCategory('pickles')" class="cat-btn bg-white hover:bg-rose-50 text-neutral-700 border border-neutral-200 px-6 py-2.5 rounded-full text-sm font-semibold transition shadow-sm">হোমমেড আচার</button>
         </div>
-        <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
-            <button onclick="filterCategory('all')" class="cat-btn active-cat">সব প্রোডাক্ট</button>
-            <button onclick="filterCategory('bangles')" class="cat-btn">💍 হ্যান্ডমেড চুড়ি</button>
-            <button onclick="filterCategory('flowers')" class="cat-btn">🌸 ফুল ও গহনা</button>
-            <button onclick="filterCategory('pickles')" class="cat-btn">🥭 হোমমেড আচার</button>
+
+        <!-- Product Grid -->
+        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- JavaScript দিয়ে প্রোডাক্ট লোড হবে -->
         </div>
-        <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
     </main>
 
-    <!-- Features -->
-    <section class="max-w-7xl mx-auto px-4 py-16 border-t border-neutral-200/50 dark:border-neutral-800">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div class="text-center p-6 rounded-2xl bg-white/60 dark:bg-neutral-800/60 backdrop-blur border border-white/50 dark:border-neutral-700 hover:shadow-lg hover:-translate-y-1 transition-all">
-                <div class="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-brand-100 to-pink-100 dark:from-brand-900/50 dark:to-pink-900/50 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-truck-fast text-2xl text-brand-600 dark:text-brand-400"></i></div>
-                <h3 class="font-bold text-sm mb-1">দ্রুত ডেলিভারি</h3>
-                <p class="text-xs text-neutral-500 dark:text-neutral-400">সারা দেশে</p>
-            </div>
-            <div class="text-center p-6 rounded-2xl bg-white/60 dark:bg-neutral-800/60 backdrop-blur border border-white/50 dark:border-neutral-700 hover:shadow-lg hover:-translate-y-1 transition-all">
-                <div class="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-emerald-100 to-teal-100 dark:from-emerald-900/50 dark:to-teal-900/50 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-shield-halved text-2xl text-emerald-600 dark:text-emerald-400"></i></div>
-                <h3 class="font-bold text-sm mb-1">১০০% খাঁটি</h3>
-                <p class="text-xs text-neutral-500 dark:text-neutral-400">গ্যারান্টি</p>
-            </div>
-            <div class="text-center p-6 rounded-2xl bg-white/60 dark:bg-neutral-800/60 backdrop-blur border border-white/50 dark:border-neutral-700 hover:shadow-lg hover:-translate-y-1 transition-all">
-                <div class="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-amber-100 to-orange-100 dark:from-amber-900/50 dark:to-orange-900/50 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-hand-holding-heart text-2xl text-amber-600 dark:text-amber-400"></i></div>
-                <h3 class="font-bold text-sm mb-1">হ্যান্ডমেড</h3>
-                <p class="text-xs text-neutral-500 dark:text-neutral-400">খাঁটি কারিগরি</p>
-            </div>
-            <div class="text-center p-6 rounded-2xl bg-white/60 dark:bg-neutral-800/60 backdrop-blur border border-white/50 dark:border-neutral-700 hover:shadow-lg hover:-translate-y-1 transition-all">
-                <div class="w-14 h-14 mx-auto mb-3 bg-gradient-to-br from-purple-100 to-indigo-100 dark:from-purple-900/50 dark:to-indigo-900/50 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-money-bill-wave text-2xl text-purple-600 dark:text-purple-400"></i></div>
-                <h3 class="font-bold text-sm mb-1">ক্যাশ অন ডেলিভারি</h3>
-                <p class="text-xs text-neutral-500 dark:text-neutral-400">সুবিধাজনক</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gradient-to-br from-neutral-900 to-neutral-950 text-neutral-300 mt-16">
-        <div class="max-w-7xl mx-auto px-4 py-12">
-            <div class="grid md:grid-cols-3 gap-8">
-                <div>
-                    <div class="flex items-center gap-2 mb-4">
-                        <div class="w-10 h-10 bg-gradient-to-br from-brand-500 to-pink-600 rounded-xl flex items-center justify-center"><span class="text-white text-xl">🌸</span></div>
-                        <h3 class="text-xl font-bold text-white">Roselle Noha</h3>
-                    </div>
-                    <p class="text-sm text-neutral-400 leading-relaxed">হ্যান্ডমেড লাক্সারি প্রোডাক্টের অনন্য ঠিকানা। ভালোবাসা দিয়ে তৈরি প্রতিটি পণ্য।</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white mb-4">দ্রুত লিংক</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="#shopSection" class="hover:text-brand-400 transition">শপ</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition">আমাদের সম্পর্কে</a></li>
-                        <li><a href="#" class="hover:text-brand-400 transition">যোগাযোগ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white mb-4">যোগাযোগ</h4>
-                    <ul class="space-y-3 text-sm">
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-phone text-brand-400"></i> +880 1XXX-XXXXXX</li>
-                        <li class="flex items-center gap-2"><i class="fa-solid fa-envelope text-brand-400"></i> hello@rosellenoha.com</li>
-                        <li class="flex gap-3 mt-3">
-                            <a href="#" class="w-9 h-9 rounded-lg bg-neutral-800 hover:bg-brand-600 flex items-center justify-center transition"><i class="fa-brands fa-facebook-f"></i></a>
-                            <a href="#" class="w-9 h-9 rounded-lg bg-neutral-800 hover:bg-brand-600 flex items-center justify-center transition"><i class="fa-brands fa-instagram"></i></a>
-                            <a href="#" class="w-9 h-9 rounded-lg bg-neutral-800 hover:bg-brand-600 flex items-center justify-center transition"><i class="fa-brands fa-whatsapp"></i></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-t border-neutral-800 mt-8 pt-6 text-center text-xs text-neutral-500">
-                © 2026 Roselle Noha. All rights reserved. Made with 💗
-            </div>
-        </div>
-    </footer>
-
-    <!-- Cart Drawer -->
-    <div id="cartDrawer" class="fixed inset-0 z-50 hidden">
-        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="toggleCart()"></div>
+    <!-- Shopping Cart Sidebar Drawer -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden hidden">
+        <div class="absolute inset-0 bg-black bg-opacity-50 transition-opacity" onclick="toggleCart()"></div>
         <div class="absolute inset-y-0 right-0 max-w-full flex pl-10">
-            <div class="w-screen max-w-md bg-white dark:bg-neutral-900 shadow-2xl flex flex-col animate-slideInRight">
-                <div class="flex items-center justify-between px-6 py-4 bg-gradient-to-r from-brand-600 to-pink-600 text-white">
-                    <h2 class="text-lg font-bold flex items-center gap-2"><i class="fa-solid fa-bag-shopping"></i> শপিং ব্যাগ</h2>
-                    <button onclick="toggleCart()" class="w-8 h-8 rounded-lg hover:bg-white/20 flex items-center justify-center text-2xl font-bold transition">&times;</button>
+            <div class="w-screen max-w-md bg-white shadow-2xl flex flex-col">
+                <div class="flex items-center justify-between px-6 py-4 bg-rose-700 text-white">
+                    <h2 class="text-lg font-bold flex items-center gap-2"><i class="fa-solid fa-bag-shopping"></i> আপনার শপিং ব্যাগ</h2>
+                    <button onclick="toggleCart()" class="text-white hover:text-neutral-200 text-2xl font-bold">&times;</button>
                 </div>
-                <div class="px-6 py-3 bg-brand-50 dark:bg-neutral-800/50 border-b border-brand-100 dark:border-neutral-800">
-                    <div class="flex justify-between text-xs font-semibold mb-2">
-                        <span id="freeDeliveryText" class="text-neutral-600 dark:text-neutral-400">ফ্রি ডেলিভারির জন্য আরো ৳৫০০ প্রয়োজন</span>
-                    </div>
-                    <div class="h-1.5 bg-neutral-200 dark:bg-neutral-700 rounded-full overflow-hidden">
-                        <div id="freeDeliveryBar" class="h-full bg-gradient-to-r from-brand-500 to-pink-500 rounded-full transition-all duration-500" style="width: 0%"></div>
-                    </div>
+                <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4 divide-y divide-neutral-100">
+                    <!-- Cart items -->
                 </div>
-                <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-6 space-y-4"></div>
-                <div class="border-t border-neutral-200 dark:border-neutral-800 p-6 bg-neutral-50 dark:bg-neutral-900/50">
-                    <div class="flex gap-2 mb-3">
-                        <input type="text" id="couponInput" placeholder="কুপন কোড (NOHA10)" class="flex-1 bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-brand-500">
-                        <button onclick="applyCoupon()" class="bg-neutral-800 dark:bg-neutral-700 hover:bg-neutral-900 dark:hover:bg-neutral-600 text-white px-4 rounded-lg text-sm font-semibold transition">প্রয়োগ</button>
+                <div class="border-t border-neutral-200 p-6 bg-neutral-50">
+                    <div class="flex justify-between text-base font-semibold text-neutral-900 mb-4">
+                        <span>মোট মূল্য:</span>
+                        <span id="cartTotal">৳ ০</span>
                     </div>
-                    <div id="couponMsg" class="text-xs mb-3 hidden"></div>
-                    <div class="space-y-1 mb-4 text-sm">
-                        <div class="flex justify-between text-neutral-600 dark:text-neutral-400">
-                            <span>সাবটোটাল:</span><span id="cartSubtotal">৳ ০</span>
-                        </div>
-                        <div id="discountRow" class="flex justify-between text-emerald-600 dark:text-emerald-400 hidden">
-                            <span>ডিসকাউন্ট:</span><span id="cartDiscount">-৳ ০</span>
-                        </div>
-                        <div class="flex justify-between text-neutral-600 dark:text-neutral-400">
-                            <span>ডেলিভারি:</span><span id="cartDelivery">৳ ০</span>
-                        </div>
-                        <div class="flex justify-between font-bold text-lg text-neutral-900 dark:text-white pt-2 border-t border-neutral-200 dark:border-neutral-800">
-                            <span>মোট:</span><span id="cartTotal">৳ ০</span>
-                        </div>
-                    </div>
-                    <button onclick="openCheckoutModal()" id="checkoutBtn" class="w-full bg-gradient-to-r from-brand-600 to-pink-600 hover:from-brand-700 hover:to-pink-700 text-white font-semibold py-3.5 rounded-xl shadow-lg shadow-brand-500/30 transition disabled:opacity-50 disabled:cursor-not-allowed">অর্ডার কনফার্ম করুন</button>
+                    <button onclick="openCheckoutModal()" id="checkoutBtn" class="w-full bg-rose-700 hover:bg-rose-800 text-white font-medium py-3.5 rounded-xl shadow transition disabled:opacity-50">অর্ডার কনফার্ম করুন</button>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Checkout Modal -->
-    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-white dark:bg-neutral-900 rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl relative max-h-[90vh] overflow-y-auto">
-            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 w-8 h-8 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 flex items-center justify-center text-xl font-bold transition">&times;</button>
-            <div class="w-14 h-14 bg-gradient-to-br from-brand-100 to-pink-100 dark:from-brand-900/50 dark:to-pink-900/50 rounded-2xl flex items-center justify-center mb-4">
-                <i class="fa-solid fa-clipboard-check text-2xl text-brand-600 dark:text-brand-400"></i>
-            </div>
-            <h3 class="text-2xl font-bold mb-1">অর্ডার সম্পন্ন করুন</h3>
-            <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-6">নিচের তথ্য দিয়ে অর্ডার নিশ্চিত করুন</p>
+    <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl relative max-h-[90vh] overflow-y-auto">
+            <button onclick="closeCheckoutModal()" class="absolute top-4 right-4 text-neutral-500 hover:text-neutral-800 text-xl font-bold">&times;</button>
+            <h3 class="text-xl font-bold text-rose-800 mb-4">অর্ডার সম্পন্ন করতে তথ্য দিন</h3>
             
             <form id="orderForm" onsubmit="submitOrder(event)" class="space-y-4">
                 <div>
-                    <label class="block text-sm font-semibold mb-1.5">আপনার নাম *</label>
-                    <input type="text" id="custName" required class="w-full border border-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent transition">
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">আপনার নাম *</label>
+                    <input type="text" id="custName" required class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
                 </div>
                 <div>
-                    <label class="block text-sm font-semibold mb-1.5">মোবাইল নম্বর *</label>
-                    <input type="tel" id="custPhone" required placeholder="01XXXXXXXXX" class="w-full border border-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent transition">
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">মোবাইল নম্বর (বিকাশ/নগদ সহ) *</label>
+                    <input type="tel" id="custPhone" required placeholder="01XXXXXXXXX" class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
                 </div>
 
-                <!-- জেলা ও থানা সিলেক্টর -->
+                <!-- District Selection -->
                 <div>
-                    <label class="block text-sm font-semibold mb-1.5">জেলা *</label>
-                    <select id="custDistrict" required onchange="onDistrictChange()" 
-                        class="district-select w-full border border-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent transition">
-                        <option value="">-- জেলা নির্বাচন করুন --</option>
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">জেলা নির্বাচন করুন *</label>
+                    <select id="custDistrict" onchange="onDistrictChange()" required class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                        <option value="">জেলা সিলেক্ট করুন</option>
+                        <option value="Habiganj">হবিগঞ্জ (Habiganj)</option>
+                        <option value="Dhaka">ঢাকা (Dhaka)</option>
+                        <option value="Sylhet">সিলেট (Sylhet)</option>
+                        <option value="Chittagong">চট্টগ্রাম (Chittagong)</option>
+                        <option value="Other">অন্যান্য জেলা</option>
+                    </select>
+                </div>
+
+                <!-- Thana / Area Selection -->
+                <div>
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">থানা / এলাকা নির্বাচন করুন *</label>
+                    <select id="custThana" onchange="updateTotal()" required class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                        <option value="">প্রথমে জেলা সিলেক্ট করুন</option>
                     </select>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-semibold mb-1.5">থানা / উপজেলা *</label>
-                    <select id="custThana" required onchange="onThanaChange()" 
-                        class="thana-select w-full border border-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent transition">
-                        <option value="">-- আগে জেলা নির্বাচন করুন --</option>
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">বাসা নং, রোড বা বিস্তারিত ঠিকানা *</label>
+                    <textarea id="custAddress" required rows="2" placeholder="যেমন: কোর্ট স্টেশন রোড, বাসা নং..." class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500"></textarea>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">পেমেন্ট মেথড *</label>
+                    <select id="paymentMethod" onchange="toggleTrxField()" class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                        <option value="COD">ক্যাশ অন ডেলিভারি (Cash on Delivery)</option>
+                        <option value="Bkash">বিকাশ সেন্ড মানি (01XXXXXXXXX)</option>
+                        <option value="Nagad">নগদ সেন্ড মানি (01XXXXXXXXX)</option>
                     </select>
                 </div>
-
-                <!-- লাইভ ডেলিভারি চার্জ ইনফো -->
-                <div id="deliveryInfo" class="hidden p-3 rounded-xl bg-gradient-to-r from-brand-50 to-pink-50 dark:from-brand-950/40 dark:to-pink-950/40 border border-brand-200 dark:border-brand-800">
-                    <div class="flex items-center justify-between text-sm">
-                        <span class="font-semibold flex items-center gap-2">
-                            <i class="fa-solid fa-truck text-brand-600 dark:text-brand-400"></i>
-                            ডেলিভারি চার্জ
-                        </span>
-                        <span id="deliveryChargeAmount" class="font-bold text-brand-700 dark:text-brand-300">৳ ৬০</span>
-                    </div>
-                    <p id="deliveryAreaLabel" class="text-xs text-neutral-600 dark:text-neutral-400 mt-1">হবিগঞ্জ সদর</p>
+                <div id="trxContainer" class="hidden">
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">ট্রানজেকশন আইডি (TrxID) *</label>
+                    <input type="text" id="trxId" placeholder="যেমন: 9N74A..." class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
                 </div>
 
-                <div>
-                    <label class="block text-sm font-semibold mb-1.5">সম্পূর্ণ ঠিকানা (বিস্তারিত) *</label>
-                    <textarea id="custAddress" required rows="2" placeholder="গ্রাম/মহল্লা, রোড, বাসা নং..." class="w-full border border-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent transition"></textarea>
+                <div class="bg-amber-50 p-3 rounded-lg text-xs text-neutral-700 space-y-1">
+                    <div>পণ্য মূল্য (Subtotal): <span id="modalSubtotal" class="font-bold text-neutral-900">৳ ০</span></div>
+                    <div>ডেলিভারি চার্জ: <span id="deliveryChargeText" class="font-bold text-rose-700">৳ ০</span></div>
+                    <div>মোট প্রদেয় পরিমাণ: <span id="modalFinalTotal" class="font-bold text-rose-700 text-sm">৳ ০</span></div>
                 </div>
 
-                <div>
-                    <label class="block text-sm font-semibold mb-2">পেমেন্ট মেথড *</label>
-                    <div class="grid grid-cols-3 gap-2">
-                        <label class="cursor-pointer">
-                            <input type="radio" name="payment" value="cod" checked class="peer sr-only">
-                            <div class="p-3 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 text-center transition">
-                                <i class="fa-solid fa-money-bill-wave text-brand-600 dark:text-brand-400 mb-1"></i>
-                                <div class="text-xs font-semibold">COD</div>
-                            </div>
-                        </label>
-                        <label class="cursor-pointer">
-                            <input type="radio" name="payment" value="bkash" class="peer sr-only">
-                            <div class="p-3 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 text-center transition">
-                                <i class="fa-solid fa-mobile-screen text-pink-600 mb-1"></i>
-                                <div class="text-xs font-semibold">বিকাশ</div>
-                            </div>
-                        </label>
-                        <label class="cursor-pointer">
-                            <input type="radio" name="payment" value="nagad" class="peer sr-only">
-                            <div class="p-3 rounded-xl border-2 border-neutral-200 dark:border-neutral-700 text-center transition">
-                                <i class="fa-solid fa-wallet text-orange-600 mb-1"></i>
-                                <div class="text-xs font-semibold">নগদ</div>
-                            </div>
-                        </label>
-                    </div>
-                </div>
-
-                <!-- Order Summary -->
-                <div class="p-4 rounded-xl bg-neutral-50 dark:bg-neutral-800/50 border border-neutral-200 dark:border-neutral-700 space-y-1.5 text-sm">
-                    <div class="flex justify-between text-neutral-600 dark:text-neutral-400">
-                        <span>সাবটোটাল:</span><span id="checkoutSubtotal">৳ ০</span>
-                    </div>
-                    <div id="checkoutDiscountRow" class="flex justify-between text-emerald-600 dark:text-emerald-400 hidden">
-                        <span>ডিসকাউন্ট:</span><span id="checkoutDiscount">-৳ ০</span>
-                    </div>
-                    <div class="flex justify-between text-neutral-600 dark:text-neutral-400">
-                        <span>ডেলিভারি চার্জ:</span><span id="checkoutDelivery">৳ ৬০</span>
-                    </div>
-                    <div class="flex justify-between font-bold text-base text-neutral-900 dark:text-white pt-2 border-t border-neutral-200 dark:border-neutral-700">
-                        <span>সর্বমোট:</span><span id="checkoutTotal">৳ ০</span>
-                    </div>
-                </div>
-
-                <button type="submit" class="w-full bg-gradient-to-r from-brand-600 to-pink-600 hover:from-brand-700 hover:to-pink-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-500/30 transition">অর্ডার প্লেস করুন</button>
+                <button type="submit" class="w-full bg-rose-700 hover:bg-rose-800 text-white font-medium py-3 rounded-xl shadow transition">অর্ডার প্লেস করুন</button>
             </form>
         </div>
     </div>
 
-    <!-- Auth Modal -->
-    <div id="authModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-white dark:bg-neutral-900 rounded-3xl max-w-sm w-full p-6 sm:p-8 shadow-2xl relative">
-            <button onclick="closeAuthModal()" class="absolute top-4 right-4 w-8 h-8 rounded-lg hover:bg-neutral-100 dark:hover:bg-neutral-800 flex items-center justify-center text-xl font-bold transition">&times;</button>
-            <div class="w-14 h-14 bg-gradient-to-br from-brand-100 to-pink-100 dark:from-brand-900/50 dark:to-pink-900/50 rounded-2xl flex items-center justify-center mb-4">
-                <i id="authIcon" class="fa-solid fa-user text-2xl text-brand-600 dark:text-brand-400"></i>
+    <!-- Order Success & WhatsApp Redirect Modal -->
+    <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 text-center shadow-2xl">
+            <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+                <i class="fa-solid fa-check"></i>
             </div>
-            <h3 id="authTitle" class="text-2xl font-bold mb-1">লগইন করুন</h3>
-            <p class="text-sm text-neutral-500 dark:text-neutral-400 mb-6">আপনার একাউন্টে প্রবেশ করুন</p>
-            <form id="authForm" onsubmit="handleAuth(event)" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-semibold mb-1.5">ইমেইল বা মোবাইল *</label>
-                    <input type="text" id="authEmail" required class="w-full border border-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent transition">
+            <h3 class="text-2xl font-bold text-neutral-800 mb-2">অর্ডার সফলভাবে সেভ হয়েছে!</h3>
+            <p class="text-neutral-600 text-sm mb-4">আপনার অর্ডারটি আমাদের ডাটাবেসে সেভ হয়েছে। দ্রুত প্রসেসিংয়ের জন্য হোয়াটসঅ্যাপে আমাদের নোটিফিকেশন মেসেজটি পাঠান।</p>
+            <div id="orderSummaryText" class="bg-neutral-100 p-3 rounded-lg text-xs text-neutral-700 text-left mb-6 font-mono"></div>
+            
+            <a id="whatsappSendBtn" href="#" target="_blank" class="w-full bg-green-600 hover:bg-green-700 text-white py-3 rounded-xl font-medium shadow flex items-center justify-center gap-2 mb-2 transition">
+                <i class="fa-brands fa-whatsapp text-xl"></i> WhatsApp-এ নোটিফিকেশন পাঠান
+            </a>
+            <button onclick="closeSuccessModal()" class="w-full text-neutral-500 text-xs py-2">বন্ধ করুন</button>
+        </div>
+    </div>
+
+    <!-- Client Auth Modal (Login / Register) -->
+    <div id="authModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-50 hidden">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl relative">
+            <button onclick="closeAuthModal()" class="absolute top-4 right-4 text-neutral-500 hover:text-neutral-800 text-xl font-bold">&times;</button>
+            <div id="authFormContainer">
+                <h3 id="authTitle" class="text-xl font-bold text-rose-800 mb-4">কাস্টমার লগইন</h3>
+                <form id="authForm" onsubmit="handleAuthSubmit(event)" class="space-y-4">
+                    <div id="nameFieldGroup" class="hidden">
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">আপনার নাম</label>
+                        <input type="text" id="authName" placeholder="পূর্ণ নাম" class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">মোবাইল নম্বর (ইউজারনেম)</label>
+                        <input type="tel" id="authPhone" required placeholder="01XXXXXXXXX" class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-neutral-700 mb-1">পাসওয়ার্ড</label>
+                        <input type="password" id="authPassword" required placeholder="পাসওয়ার্ড দিন" class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                    </div>
+                    <p id="authError" class="text-xs text-red-600 hidden"></p>
+                    <button type="submit" id="authSubmitBtn" class="w-full bg-rose-700 hover:bg-rose-800 text-white font-medium py-2.5 rounded-xl shadow transition text-sm">লগইন করুন</button>
+                </form>
+                <div class="mt-4 text-center text-xs text-neutral-600">
+                    <span id="authToggleText">অ্যাকাউন্ট নেই?</span> 
+                    <button onclick="toggleAuthMode()" id="authToggleBtn" class="text-rose-700 font-bold underline ml-1">রেজিস্ট্রেশন করুন</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Client Profile / Order History Dashboard -->
+    <div id="clientDashboardModal" class="fixed inset-0 z-50 bg-black bg-opacity-60 flex items-center justify-center p-2 sm:p-6 hidden">
+        <div class="bg-white rounded-2xl max-w-4xl w-full h-[85vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="bg-rose-700 text-white px-6 py-4 flex items-center justify-between">
                 <div>
-                    <label class="block text-sm font-semibold mb-1.5">পাসওয়ার্ড *</label>
-                    <input type="password" id="authPass" required class="w-full border border-neutral-200 dark:border-neutral-700 dark:bg-neutral-800 rounded-xl p-3 text-sm focus:ring-2 focus:ring-brand-500 focus:border-transparent transition">
+                    <h2 class="text-xl font-bold flex items-center gap-2"><i class="fa-solid fa-user-circle"></i> আমার অ্যাকাউন্ট ও অর্ডার হিস্ট্রি</h2>
+                    <p id="clientWelcomeText" class="text-xs text-rose-100 mt-0.5">স্বাগতম!</p>
                 </div>
-                <button type="submit" id="authSubmitBtn" class="w-full bg-gradient-to-r from-brand-600 to-pink-600 hover:from-brand-700 hover:to-pink-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-500/30 transition">লগইন</button>
+                <div class="flex items-center gap-3">
+                    <button onclick="logoutClient()" class="text-xs bg-rose-900 hover:bg-rose-950 text-white px-3 py-1.5 rounded-lg transition">লগআউট</button>
+                    <button onclick="closeClientDashboard()" class="text-white hover:text-neutral-200 text-2xl font-bold">&times;</button>
+                </div>
+            </div>
+            <div class="flex-1 overflow-y-auto p-4 sm:p-6 bg-neutral-50">
+                <h3 class="text-base font-bold text-neutral-800 mb-3">আপনার দেওয়া অর্ডারসমূহ (অর্ডার ট্র্যাকিং)</h3>
+                <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-x-auto">
+                    <table class="w-full text-left text-xs sm:text-sm">
+                        <thead class="bg-neutral-100 text-neutral-700 uppercase font-semibold border-b border-neutral-200">
+                            <tr>
+                                <th class="p-3">অর্ডার আইডি</th>
+                                <th class="p-3">তারিখ</th>
+                                <th class="p-3">আইটেমসমূহ</th>
+                                <th class="p-3">মোট টাকা</th>
+                                <th class="p-3">পেমেন্ট</th>
+                                <th class="p-3 text-center">স্ট্যাটাস</th>
+                            </tr>
+                        </thead>
+                        <tbody id="clientOrderTable" class="divide-y divide-neutral-200">
+                            <!-- Client Orders -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Secret Admin Login Modal -->
+    <div id="adminAuthModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-70 hidden">
+        <div class="bg-white rounded-2xl max-w-sm w-full p-6 shadow-2xl relative">
+            <h3 class="text-xl font-bold text-neutral-800 mb-4 flex items-center gap-2">
+                <i class="fa-solid fa-shield-halved text-rose-700"></i> সিক্রেট অ্যাডমিন পোর্টাল
+            </h3>
+            <form onsubmit="handleAdminLogin(event)" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-neutral-700 mb-1">অ্যাডমিন পাসওয়ার্ড দিন</label>
+                    <input type="password" id="adminPassword" required placeholder="পাসওয়ার্ড লিখুন" class="w-full border border-neutral-300 rounded-lg p-2.5 text-sm focus:ring-rose-500 focus:border-rose-500">
+                    <p id="loginError" class="text-xs text-red-600 mt-1 hidden">পাসওয়ার্ড সঠিক নয়!</p>
+                </div>
+                <div class="flex gap-2">
+                    <button type="submit" class="flex-1 bg-neutral-900 hover:bg-black text-white font-medium py-2.5 rounded-xl shadow transition text-sm">লগইন</button>
+                    <button type="button" onclick="closeAdminAuthModal()" class="bg-neutral-200 hover:bg-neutral-300 text-neutral-800 px-4 py-2.5 rounded-xl text-sm transition">বাতিল</button>
+                </div>
             </form>
-            <p class="text-center text-sm text-neutral-600 dark:text-neutral-400 mt-5">
-                <span id="authToggleText">একাউন্ট নেই?</span> 
-                <button onclick="toggleAuthMode()" id="authToggleBtn" class="text-brand-600 dark:text-brand-400 font-bold hover:underline">সাইনআপ করুন</button>
-            </p>
         </div>
     </div>
 
-    <!-- Quick View -->
-    <div id="quickViewModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden">
-        <div class="bg-white dark:bg-neutral-900 rounded-3xl max-w-md w-full overflow-hidden shadow-2xl relative">
-            <button onclick="closeQuickView()" class="absolute top-3 right-3 z-10 w-9 h-9 rounded-full bg-white/90 dark:bg-neutral-800/90 backdrop-blur hover:bg-white flex items-center justify-center text-xl font-bold transition">&times;</button>
-            <img id="qvImage" class="w-full h-64 object-cover" src="" alt="">
-            <div class="p-6">
-                <div id="qvBadge" class="inline-block bg-brand-100 dark:bg-brand-900/50 text-brand-700 dark:text-brand-300 text-xs font-bold px-3 py-1 rounded-full mb-2"></div>
-                <h3 id="qvName" class="text-xl font-bold mb-2"></h3>
-                <div class="flex items-center gap-1 mb-3">
-                    <div id="qvStars" class="text-amber-500"></div>
-                    <span id="qvRating" class="text-sm text-neutral-500"></span>
+    <!-- Secret Admin Dashboard Panel -->
+    <div id="adminPanelModal" class="fixed inset-0 z-50 bg-black bg-opacity-70 flex items-center justify-center p-2 sm:p-6 hidden">
+        <div class="bg-white rounded-2xl max-w-6xl w-full h-[90vh] flex flex-col shadow-2xl overflow-hidden">
+            <div class="bg-neutral-900 text-white px-6 py-4 flex items-center justify-between">
+                <div>
+                    <h2 class="text-xl font-bold flex items-center gap-2"><i class="fa-solid fa-chart-line text-rose-500"></i> Roselle Noha - অ্যাডমিন ড্যাশবোর্ড</h2>
+                    <p class="text-xs text-neutral-400">সকল অর্ডারের লাইভ ডাটাবেস ও স্ট্যাটাস ম্যানেজমেন্ট</p>
                 </div>
-                <p id="qvDesc" class="text-sm text-neutral-600 dark:text-neutral-400 mb-4"></p>
-                <div class="flex items-center justify-between mb-4">
-                    <span id="qvPrice" class="text-2xl font-bold text-brand-700 dark:text-brand-400"></span>
-                    <span class="text-xs text-neutral-500 flex items-center gap-1"><i class="fa-solid fa-truck"></i> ২-৩ দিনে ডেলিভারি</span>
+                <div class="flex items-center gap-3">
+                    <button onclick="clearAllOrders()" class="text-xs bg-red-800 hover:bg-red-700 text-white px-3 py-1.5 rounded-lg transition">সব ডিলিট করুন</button>
+                    <button onclick="closeAdminPanel()" class="text-white hover:text-neutral-300 text-2xl font-bold">&times;</button>
                 </div>
-                <button id="qvAddBtn" class="w-full bg-gradient-to-r from-brand-600 to-pink-600 hover:from-brand-700 hover:to-pink-700 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-brand-500/30 transition">ব্যাগে যোগ করুন</button>
+            </div>
+            <div class="flex-1 overflow-y-auto p-4 sm:p-6 bg-neutral-50">
+                <div class="bg-white rounded-xl shadow-sm border border-neutral-200 overflow-x-auto">
+                    <table class="w-full text-left text-xs sm:text-sm">
+                        <thead class="bg-neutral-100 text-neutral-700 uppercase font-semibold border-b border-neutral-200">
+                            <tr>
+                                <th class="p-3">অর্ডার আইডি</th>
+                                <th class="p-3">তারিখ</th>
+                                <th class="p-3">কাস্টমার তথ্য</th>
+                                <th class="p-3">আইটেমস</th>
+                                <th class="p-3">মোট টাকা</th>
+                                <th class="p-3">পেমেন্ট</th>
+                                <th class="p-3">স্ট্যাটাস</th>
+                                <th class="p-3 text-center">অ্যাকশন</th>
+                            </tr>
+                        </thead>
+                        <tbody id="adminOrderTable" class="divide-y divide-neutral-200">
+                            <!-- Admin Orders -->
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Toast -->
-    <div id="toast" class="fixed bottom-6 left-1/2 -translate-x-1/2 bg-neutral-900 dark:bg-white dark:text-neutral-900 text-white px-6 py-3 rounded-2xl shadow-2xl text-sm font-semibold opacity-0 translate-y-4 transition-all duration-300 pointer-events-none z-[60] flex items-center gap-2">
-        <i class="fa-solid fa-check-circle text-green-400 dark:text-green-600"></i>
-        <span id="toastMsg">যোগ করা হয়েছে!</span>
-    </div>
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-neutral-300 py-10 px-4 mt-16 text-center text-sm">
+        <p class="font-bold text-white text-lg mb-2">Roselle Noha</p>
+        <p class="text-neutral-400 mb-4">হ্যান্ডমেড চুড়ি, ফুল ও খাঁটি হোমমেড আচারের বিশ্বস্ত অনলাইন শপ।</p>
+        <p>&copy; 2026 Roselle Noha. All Rights Reserved.</p>
+    </footer>
 
-    <!-- Mobile Floating Cart -->
-    <button onclick="toggleCart()" class="fixed bottom-6 right-6 z-40 md:hidden w-14 h-14 bg-gradient-to-br from-brand-600 to-pink-600 text-white rounded-full shadow-2xl shadow-brand-500/50 flex items-center justify-center hover:scale-110 transition">
-        <i class="fa-solid fa-bag-shopping text-xl"></i>
-        <span id="mobileCartCount" class="absolute -top-1 -right-1 bg-amber-400 text-neutral-900 text-xs rounded-full min-w-[22px] h-[22px] flex items-center justify-center font-bold px-1 border-2 border-white">0</span>
-    </button>
-
+    <!-- JavaScript Application Logic -->
     <script>
-        // ==================== PRODUCTS ====================
+        // *** CONFIGURATION ***
+        const MY_WHATSAPP_NUMBER = "8801700000000"; // আপনার হোয়াটসঅ্যাপ নম্বর দিন
+        const ADMIN_SECRET_KEY = "roselle123";     // আপনার সিক্রেট অ্যাডমিন পাসওয়ার্ড
+
+        // Product Database
         const products = [
-            { id: 1, name: "রয়েল রেড হ্যান্ডমেড চুড়ি", category: "bangles", price: 350, oldPrice: 450, rating: 4.8, reviews: 124, badge: "Bestseller", desc: "প্রিমিয়াম কোয়ালিটির হাতে তৈরি লাল চুড়ি। যেকোনো উৎসবে আপনার সাজকে করে তুলবে অনন্য।", img: "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=600&auto=format&fit=crop&q=80" },
-            { id: 2, name: "গোল্ডেন ট্রাডিশনাল চুড়ি", category: "bangles", price: 450, oldPrice: 600, rating: 4.9, reviews: 89, badge: "Premium", desc: "সোনালি রঙের ঐতিহ্যবাহী চুড়ি। বিয়ে বা বিশেষ অনুষ্ঠানে পরার জন্য পারফেক্ট।", img: "https://images.unsplash.com/photo-1599643478514-4a11011d6e5c?w=600&auto=format&fit=crop&q=80" },
-            { id: 3, name: "তাজা জারবেরা ফুলের গহনা", category: "flowers", price: 250, oldPrice: 320, rating: 4.7, reviews: 56, badge: "Fresh", desc: "প্রাকৃতিক তাজা জারবেরা ফুল দিয়ে তৈরি হাতের গহনা। একদিন টেকে।", img: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=600&auto=format&fit=crop&q=80" },
-            { id: 4, name: "রজনীগন্ধা ফুলের মালা", category: "flowers", price: 300, oldPrice: 380, rating: 4.6, reviews: 42, badge: "New", desc: "সুগন্ধি রজনীগন্ধা ফুলের সুন্দর মালা। বিশেষ দিনে ব্যবহারের জন্য আদর্শ।", img: "https://images.unsplash.com/photo-1596438459194-f28d3c8bd6d8?w=600&auto=format&fit=crop&q=80" },
-            { id: 5, name: "হোমমেড আমের আচার", category: "pickles", price: 220, oldPrice: 280, rating: 4.9, reviews: 210, badge: "Top Rated", desc: "খাঁটি মায়ের হাতের স্বাদ। ৫০০ গ্রাম প্যাক। কোনো প্রিজারভেটিভ নেই।", img: "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600&auto=format&fit=crop&q=80" },
-            { id: 6, name: "মিষ্টি আচার (স্পেশাল)", category: "pickles", price: 180, oldPrice: 220, rating: 4.7, reviews: 156, badge: "Homemade", desc: "হাতে তৈরি মিষ্টি আচার, ৪০০ গ্রাম প্যাক। শিশুদের প্রিয় স্বাদ।", img: "https://images.unsplash.com/photo-1599305090598-fe179d501227?w=600&auto=format&fit=crop&q=80" },
-            { id: 7, name: "পার্ল বিডস ব্রেসলেট", category: "bangles", price: 280, oldPrice: 350, rating: 4.8, reviews: 78, badge: "Trending", desc: "পার্ল বিডস দিয়ে তৈরি এলিগেন্ট ব্রেসলেট। ডেইলি ওয়্যারের জন্য পারফেক্ট।", img: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=600&auto=format&fit=crop&q=80" },
-            { id: 8, name: "মিক্সড ভেজিটেবল আচার", category: "pickles", price: 200, oldPrice: 250, rating: 4.5, reviews: 92, badge: "Combo", desc: "বিভিন্ন সবজি মিশিয়ে তৈরি স্বাস্থ্যকর হোমমেড আচার। ৫০০ গ্রাম প্যাক।", img: "https://images.unsplash.com/photo-1625944230945-1b7dd3b949ab?w=600&auto=format&fit=crop&q=80" }
+            { id: 1, name: "রেেশমি সুতার চুড়ি সেট (গোল্ডেন টাচ)", category: "bangles", price: 450, image: "https://images.unsplash.com/photo-1611591472092-23c2a61361b7?w=500&auto=format&fit=crop&q=60" },
+            { id: 2, name: "কাঁচ ও পাথরের এক্সক্লুসিভ ব্রাইডাল চুড়ি", category: "bangles", price: 850, image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=60" },
+            { id: 3, name: "ঐতিহ্যবাহী লাল-সাদা কাঁচের চুড়ি সেট", category: "bangles", price: 320, image: "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500&auto=format&fit=crop&q=60" },
+            { id: 4, name: "মেটালিক গোল্ডেন ঘুঙুর দেওয়া চুড়ি সেট", category: "bangles", price: 550, image: "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=500&auto=format&fit=crop&q=60" },
+            { id: 5, name: "হলুদ ও মেহেদি সন্ধ্যার কৃত্রিম ফুলের গহনা সেট", category: "flowers", price: 650, image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?w=500&auto=format&fit=crop&q=60" },
+            { id: 6, name: "তাজা গোলাপ ও রজনীগন্ধার গজরা টায়রা", category: "flowers", price: 250, image: "https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=500&auto=format&fit=crop&q=60" },
+            { id: 7, name: "ফুল ও পাথরের চমৎকার কানের দুল ও টিকলি সেট", category: "flowers", price: 490, image: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=500&auto=format&fit=crop&q=60" },
+            { id: 8, name: "স্পেশাল টক-ঝাল-মিষ্টি আমের আচার (৫০০ গ্রাম)", category: "pickles", price: 380, image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&auto=format&fit=crop&q=60" },
+            { id: 9, name: "খাঁটি রসুনের স্পেশাল হোমমেড আচার (৪০০ গ্রাম)", category: "pickles", price: 420, image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500&auto=format&fit=crop&q=60" },
+            { id: 10, name: "নাগা মরিচ ও তেঁতুলের আচার (৩০০ গ্রাম)", category: "pickles", price: 350, image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=500&auto=format&fit=crop&q=60" },
+            { id: 11, name: "হাঁড়িভাঙা আমের ঝাল আচার (৫০০ গ্রাম)", category: "pickles", price: 400, image: "https://images.unsplash.com/photo-1589301760014-d929f3979dbc?w=500&auto=format&fit=crop&q=60" },
+            { id: 12, name: "চালতা ও জলপাইয়ের মিশ্রিত টক-মিষ্টি আচার", category: "pickles", price: 320, image: "https://images.unsplash.com/photo-1626777552726-4a6b54c97e46?w=500&auto=format&fit=crop&q=60" }
         ];
 
-        // ==================== LOCATION DATA (জেলা + থানা) ====================
-        const locations = {
-            "হবিগঞ্জ": {
-                thanas: ["হবিগঞ্জ সদর", "মাধবপুর", "নবীগঞ্জ", "বাহুবল", "আজমিরীগঞ্জ", "বানিয়াচং", "লাখাই", "চুনারুঘাট", "শায়েস্তাগঞ্জ"],
-                note: "সদর থানায় ৳৬০, অন্য থানায় ৳১২০"
-            },
-            "ঢাকা": { thanas: ["ধামরাই", "দোহার", "কেরানীগঞ্জ", "নবাবগঞ্জ", "সাভার", "আশুলিয়া", "মিরপুর", "উত্তরা", "গুলশান", "ধানমন্ডি", "মতিঝিল", "রামপুরা", "বাড্ডা", "মোহাম্মদপুর", "তেজগাঁও", "সূত্রাপুর", "কোতোয়ালি", "লালবাগ", "চকবাজার", "পল্লবী", "কাফরুল", "শাহবাগ", "নিউমার্কেট", "খিলগাঁও"] },
-            "চট্টগ্রাম": { thanas: ["কোতোয়ালি", "পাহাড়তলী", "ডবলমুরিং", "হালিশহর", "বন্দর", "পতেঙ্গা", "চান্দগাঁও", "পাঁচলাইশ", "সীতাকুণ্ড", "মীরসরাই", "সন্দ্বীপ", "হাটহাজারী", "রাউজান", "রাঙ্গুনিয়া", "ফটিকছড়ি", "বোয়ালখালী", "আনোয়ারা", "বাঁশখালী", "লোহাগাড়া", "সাতকানিয়া", "চন্দনাইশ", "পটিয়া"] },
-            "সিলেট": { thanas: ["সিলেট সদর", "বিয়ানীবাজার", "বিশ্বনাথ", "বালাগঞ্জ", "গোলাপগঞ্জ", "গোয়াইনঘাট", "জৈন্তাপুর", "কানাইঘাট", "কোম্পানীগঞ্জ", "ফেঞ্চুগঞ্জ", "মৌলভীবাজার", "জকিগঞ্জ", "ওসমানীনগর", "জগন্নাথপুর"] },
-            "রাজশাহী": { thanas: ["বোয়ালিয়া", "মতিহার", "রাজপাড়া", "শাহমখদুম", "কাটাখালী", "পবা", "গোদাগাড়ী", "তানোর", "মোহনপুর", "বাগমারা", "চারঘাট", "পুঠিয়া", "দুর্গাপুর", "মোহনপুর"] },
-            "খুলনা": { thanas: ["খালিশপুর", "সোনাডাঙ্গা", "দৌলতপুর", "খানজাহান আলী", "হরিণটানা", "লবণচরা", "বটিয়াঘাটা", "দাকোপ", "ডুমুরিয়া", "কয়রা", "পাইকগাছা", "ফুলতলা", "রূপসা", "তেরখাদা"] },
-            "বরিশাল": { thanas: ["বরিশাল সদর", "বাকেরগঞ্জ", "বাবুগঞ্জ", "বানারীপাড়া", "গৌরনদী", "হিজলা", "মেহেন্দিগঞ্জ", "মুলাদী", "উজিরপুর", "আগৈলঝাড়া"] },
-            "রংপুর": { thanas: ["রংপুর সদর", "বদরগঞ্জ", "গঙ্গাচড়া", "কাউনিয়া", "মিঠাপুকুর", "পীরগঞ্জ", "পীরগাছা", "তারাগঞ্জ"] },
-            "ময়মনসিংহ": { thanas: ["ময়মনসিংহ সদর", "ত্রিশাল", "ভালুকা", "মুক্তাগাছা", "ফুলবাড়িয়া", "গফরগাঁও", "গৌরীপুর", "ঈশ্বরগঞ্জ", "নান্দাইল", "তারাকান্দা", "ফুলপুর", "হালুয়াঘাট", "ধোবাউড়া"] },
-            "কুমিল্লা": { thanas: ["কুমিল্লা সদর", "আদর্শ সদর", "সদর দক্ষিণ", "বুড়িচং", "চান্দিনা", "চৌদ্দগ্রাম", "দাউদকান্দি", "দেবিদ্বার", "হোমনা", "লাকসাম", "মেঘনা", "মনোহরগঞ্জ", "মুরাদনগর", "নাঙ্গলকোট", "তিতাস", "ব্রাহ্মণপাড়া"] },
-            "নারায়ণগঞ্জ": { thanas: ["নারায়ণগঞ্জ সদর", "আড়াইহাজার", "বন্দর", "ফতুল্লা", "রূপগঞ্জ", "সোনারগাঁও", "সিদ্ধিরগঞ্জ"] },
-            "গাজীপুর": { thanas: ["গাজীপুর সদর", "কালিয়াকৈর", "কাপাসিয়া", "শ্রীপুর", "কালীগঞ্জ"] },
-            "টাঙ্গাইল": { thanas: ["টাঙ্গাইল সদর", "বাসাইল", "ভূঞাপুর", "দেলদুয়ার", "ঘাটাইল", "গোপালপুর", "কালিহাতী", "মধুপুর", "মির্জাপুর", "নাগরপুর", "সখীপুর", "ধনবাড়ী"] },
-            "নরসিংদী": { thanas: ["নরসিংদী সদর", "বেলাবো", "মনোহরদী", "পলাশ", "রায়পুরা", "শিবপুর"] },
-            "মানিকগঞ্জ": { thanas: ["মানিকগঞ্জ সদর", "দৌলতপুর", "ঘিওর", "হরিরামপুর", "সাটুরিয়া", "শিবালয়", "সিংগাইর"] },
-            "মুন্সিগঞ্জ": { thanas: ["মুন্সিগঞ্জ সদর", "গজারিয়া", "লৌহজং", "শ্রীনগর", "সিরাজদিখান", "টংগীবাড়ী"] },
-            "ফরিদপুর": { thanas: ["ফরিদপুর সদর", "আলফাডাঙ্গা", "ভাঙ্গা", "বোয়ালমারী", "চরভদ্রাসন", "মধুখালী", "নগরকান্দা", "সদরপুর", "সালথা"] },
-            "বগুড়া": { thanas: ["বগুড়া সদর", "আদমদীঘি", "ধুনট", "দুপচাঁচিয়া", "গাবতলী", "কাহালু", "নন্দীগ্রাম", "শাজাহানপুর", "শেরপুর", "শিবগঞ্জ", "সারিয়াকান্দি", "সোনাতলা"] },
-            "যশোর": { thanas: ["যশোর সদর", "অভয়নগর", "বাঘারপাড়া", "চৌগাছা", "ঝিকরগাছা", "কেশবপুর", "মণিরামপুর", "শার্শা"] },
-            "দিনাজপুর": { thanas: ["দিনাজপুর সদর", "বিরামপুর", "বোচাগঞ্জ", "চিরিরবন্দর", "ফুলবাড়ী", "ঘোড়াঘাট", "হাকিমপুর", "কাহারোল", "খানসামা", "নবাবগঞ্জ", "পার্বতীপুর", "বীরগঞ্জ"] },
-            "কুষ্টিয়া": { thanas: ["কুষ্টিয়া সদর", "ভেড়ামারা", "দৌলতপুর", "খোকসা", "কুমারখালী", "মিরপুর"] },
-            "ঝিনাইদহ": { thanas: ["ঝিনাইদহ সদর", "কালীগঞ্জ", "কোটচাঁদপুর", "মহেশপুর", "শৈলকুপা", "হরিণাকুণ্ডু"] },
-            "সাতক্ষীরা": { thanas: ["সাতক্ষীরা সদর", "আশাশুনি", "দেবহাটা", "কালীগঞ্জ", "কলারোয়া", "শ্যামনগর", "তালা"] },
-            "বাগেরহাট": { thanas: ["বাগেরহাট সদর", "চিতলমারী", "ফকিরহাট", "কচুয়া", "মোল্লাহাট", "মোংলা", "মোড়েলগঞ্জ", "রামপাল", "শরণখোলা"] },
-            "পটুয়াখালী": { thanas: ["পটুয়াখালী সদর", "বাউফল", "দশমিনা", "দুমকি", "গলাচিপা", "কলাপাড়া", "মির্জাগঞ্জ", "রাঙ্গাবালী"] },
-            "ভোলা": { thanas: ["ভোলা সদর", "বোরহানউদ্দিন", "চরফ্যাশন", "দৌলতখান", "লালমোহন", "মনপুরা", "তজুমদ্দিন"] },
-            "নোয়াখালী": { thanas: ["নোয়াখালী সদর", "বেগমগঞ্জ", "চাটখিল", "কোম্পানীগঞ্জ", "হাতিয়া", "সেনবাগ", "সোনাইমুড়ি", "সুবর্ণচর", "কবিরহাট"] },
-            "ফেনী": { thanas: ["ফেনী সদর", "ছাগলনাইয়া", "দাগনভূঞা", "ফুলগাজী", "মুহুরীগঞ্জ", "পরশুরাম", "সোনাগাজী"] },
-            "লক্ষ্মীপুর": { thanas: ["লক্ষ্মীপুর সদর", "কমলনগর", "রায়পুর", "রামগঞ্জ", "রামগতি"] },
-            "চাঁদপুর": { thanas: ["চাঁদপুর সদর", "হাজীগঞ্জ", "কচুয়া", "ফরিদগঞ্জ", "হাইমচর", "মতলব উত্তর", "মতলব দক্ষিণ", "শাহরাস্তি"] },
-            "ব্রাহ্মণবাড়িয়া": { thanas: ["ব্রাহ্মণবাড়িয়া সদর", "আশুগঞ্জ", "বাঞ্ছারামপুর", "বিজয়নগর", "কসবা", "নাসিরনগর", "নবীনগর", "সরাইল", "আখাউড়া"] },
-            "কিশোরগঞ্জ": { thanas: ["কিশোরগঞ্জ সদর", "অষ্টগ্রাম", "বাজিতপুর", "ভৈরব", "হোসেনপুর", "ইটনা", "করিমগঞ্জ", "কটিয়াদী", "কুলিয়ারচর", "মিঠামইন", "নিকলী", "পাকুন্দিয়া", "তাড়াইল"] },
-            "নেত্রকোনা": { thanas: ["নেত্রকোনা সদর", "আটপাড়া", "বারহাট্টা", "দুর্গাপুর", "কলমাকান্দা", "কেন্দুয়া", "মদন", "মোহনগঞ্জ", "পূর্বধলা"] },
-            "জামালপুর": { thanas: ["জামালপুর সদর", "বকশীগঞ্জ", "দেওয়ানগঞ্জ", "ইসলামপুর", "মাদারগঞ্জ", "মেলান্দহ", "সরিষাবাড়ী"] },
-            "শেরপুর": { thanas: ["শেরপুর সদর", "নকলা", "নালিতাবাড়ী", "শ্রীবরদী", "ঝিনাইগাতী"] },
-            "গাইবান্ধা": { thanas: ["গাইবান্ধা সদর", "ফুলছড়ি", "গোবিন্দগঞ্জ", "পলাশবাড়ী", "সাদুল্লাপুর", "সাঘাটা", "সুন্দরগঞ্জ"] },
-            "কুড়িগ্রাম": { thanas: ["কুড়িগ্রাম সদর", "ভুরুঙ্গামারী", "চিলমারী", "ফুলবাড়ী", "নাগেশ্বরী", "রাজারহাট", "রৌমারী", "উলিপুর", "চর রাজিবপুর"] },
-            "লালমনিরহাট": { thanas: ["লালমনিরহাট সদর", "আদিতমারী", "কালীগঞ্জ", "হাতীবান্ধা", "পাটগ্রাম"] },
-            "নীলফামারী": { thanas: ["নীলফামারী সদর", "ডোমার", "ডিমলা", "জলঢাকা", "কিশোরগঞ্জ", "সৈয়দপুর"] },
-            "পঞ্চগড়": { thanas: ["পঞ্চগড় সদর", "আটোয়ারী", "বোদা", "দেবীগঞ্জ", "তেঁতুলিয়া"] },
-            "ঠাকুরগাঁও": { thanas: ["ঠাকুরগাঁও সদর", "বালিয়াডাঙ্গী", "হরিপুর", "পীরগঞ্জ", "রাণীশংকৈল"] },
-            "সুনামগঞ্জ": { thanas: ["সুনামগঞ্জ সদর", "বিশ্বম্ভরপুর", "ছাতক", "দিরাই", "ধর্মপাশা", "দোয়ারাবাজার", "জগন্নাথপুর", "জামালগঞ্জ", "শাল্লা", "তাহিরপুর", "মধ্যনগর", "শান্তিগঞ্জ"] },
-            "মৌলভীবাজার": { thanas: ["মৌলভীবাজার সদর", "বড়লেখা", "কমলগঞ্জ", "কুলাউড়া", "রাজনগর", "শ্রীমঙ্গল", "জুড়ী"] },
-            "পাবনা": { thanas: ["পাবনা সদর", "আটঘরিয়া", "বেড়া", "ভাঙ্গুড়া", "চাটমোহর", "ফরিদপুর", "ঈশ্বরদী", "সাঁথিয়া", "সুজানগর"] },
-            "সিরাজগঞ্জ": { thanas: ["সিরাজগঞ্জ সদর", "বেলকুচি", "চৌহালি", "কামারখاندা", "কাজীপুর", "রায়গঞ্জ", "শাহজাদপুর", "তাড়াশ", "উল্লাপাড়া"] },
-            "নাটোর": { thanas: ["নাটোর সদর", "বাগাতিপাড়া", "বড়াইগ্রাম", "গুরুদাসপুর", "লালপুর", "সিংড়া", "নলডাঙ্গা"] },
-            "নওগাঁ": { thanas: ["নওগাঁ সদর", "আত্রাই", "বদলগাছী", "ধামইরহাট", "মহাদেবপুর", "মান্দা", "নিয়ামতপুর", "পত্নীতলা", "পোরশা", "রাণীনগর", "সাপাহার"] },
-            "চাঁপাইনবাবগঞ্জ": { thanas: ["চাঁপাইনবাবগঞ্জ সদর", "ভোলাহাট", "গোমস্তাপুর", "নাচোল", "শিবগঞ্জ"] },
-            "জয়পুরহাট": { thanas: ["জয়পুরহাট সদর", "আক্কেলপুর", "কালাই", "ক্ষেতলাল", "পাঁচবিবি"] },
-            "মেহেরপুর": { thanas: ["মেহেরপুর সদর", "গাংনী", "মুজিবনগর"] },
-            "চুয়াডাঙ্গা": { thanas: ["চুয়াডাঙ্গা সদর", "আলমডাঙ্গা", "দামুড়হুদা", "জীবননগর"] },
-            "মাগুরা": { thanas: ["মাগুরা সদর", "মহম্মদপুর", "শালিখা", "শ্রীপুর"] },
-            "ঝালকাঠি": { thanas: ["ঝালকাঠি সদর", "কাঠালিয়া", "নলছিটি", "রাজাপুর"] },
-            "পিরোজপুর": { thanas: ["পিরোজপুর সদর", "ভান্ডারিয়া", "কাউখালী", "মঠবাড়িয়া", "নাজিরপুর", "নেছারাবাদ", "জিয়ানগর"] },
-            "বরগুনা": { thanas: ["বরগুনা সদর", "আমতলী", "বামনা", "বেতাগী", "পাথরঘাটা", "তালতলী"] },
-            "খাগড়াছড়ি": { thanas: ["খাগড়াছড়ি সদর", "দীঘিনালা", "গুইমারা", "লক্ষ্মীছড়ি", "মহালছড়ি", "মানিকছড়ি", "মাটিরাঙ্গা", "পানছড়ি", "রামগড়"] },
-            "রাঙ্গামাটি": { thanas: ["রাঙ্গামাটি সদর", "বাঘাইছড়ি", "বরকল", "কাপ্তাই", "কাউখালী", "জুরাছড়ি", "লংগদু", "নানিয়ারচর", "রাজস্থলী", "সদর"] },
-            "বান্দরবান": { thanas: ["বান্দরবান সদর", "আলীকদম", "লামা", "নাইক্ষ্যংছড়ি", "রোয়াংছড়ি", "রুমা", "থানচি"] },
-            "কক্সবাজার": { thanas: ["কক্সবাজার সদর", "চকরিয়া", "কুতুবদিয়া", "মহেশখালী", "পেকুয়া", "রামু", "টেকনাফ", "উখিয়া"] }
-        };
-
-        let cart = JSON.parse(localStorage.getItem('rn_cart') || '[]');
+        let cart = [];
         let currentCategory = 'all';
-        let authMode = 'login';
-        let appliedCoupon = null;
-        let currentUser = JSON.parse(localStorage.getItem('rn_user') || 'null');
-        let darkMode = localStorage.getItem('rn_dark') === 'true';
-        let selectedDistrict = '';
-        let selectedThana = '';
+        let isRegisterMode = false;
 
-        const COUPONS = {
-            'NOHA10': { type: 'percent', value: 10, label: '১০% ছাড়' },
-            'FREESHIP': { type: 'fixed', value: 60, label: 'ফ্রি ডেলিভারি' }
-        };
-        const FREE_DELIVERY_THRESHOLD = 500;
-
-        // ==================== DELIVERY CHARGE ====================
-        function getDeliveryCharge() {
-            if (selectedDistrict === 'হবিগঞ্জ' && selectedThana === 'হবিগঞ্জ সদর') return 60;
-            return 120;
-        }
-
-        // ==================== INIT ====================
-        document.addEventListener('DOMContentLoaded', () => {
-            if (darkMode) {
-                document.documentElement.classList.add('dark');
-                document.getElementById('darkIcon').className = 'fa-solid fa-sun text-amber-300';
-            }
-            initDistricts();
-            initUser();
-            renderProducts();
-            updateCartCount();
-            animateCounters();
+        window.addEventListener('DOMContentLoaded', () => {
+            checkAdminHash();
+            updateAuthUI();
         });
 
-        // ==================== LOCATION LOGIC ====================
-        function initDistricts() {
-            const select = document.getElementById('custDistrict');
-            const sortedDistricts = Object.keys(locations).sort();
-            sortedDistricts.forEach(d => {
-                const opt = document.createElement('option');
-                opt.value = d;
-                opt.textContent = d;
-                select.appendChild(opt);
+        window.addEventListener('hashchange', () => {
+            checkAdminHash();
+        });
+
+        function checkAdminHash() {
+            if(window.location.hash === '#admin-login') {
+                document.getElementById('adminAuthModal').classList.remove('hidden');
+            }
+        }
+
+        // Render Products
+        function renderProducts(items) {
+            const grid = document.getElementById('productGrid');
+            grid.innerHTML = '';
+            
+            if(items.length === 0) {
+                grid.innerHTML = `<div class="col-span-full text-center py-12 text-neutral-500">কোনো প্রোডাক্ট পাওয়া যায়নি।</div>`;
+                return;
+            }
+
+            items.forEach(product => {
+                grid.innerHTML += `
+                    <div class="bg-white rounded-2xl shadow-sm hover:shadow-md transition overflow-hidden border border-neutral-200 flex flex-col justify-between">
+                        <div>
+                            <div class="h-52 overflow-hidden bg-neutral-100">
+                                <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover hover:scale-105 transition duration-300">
+                            </div>
+                            <div class="p-4">
+                                <h3 class="font-semibold text-neutral-800 text-base mb-1 line-clamp-1">${product.name}</h3>
+                                <p class="text-rose-700 font-bold text-lg">৳ ${product.price}</p>
+                            </div>
+                        </div>
+                        <div class="p-4 pt-0">
+                            <button onclick="addToCart(${product.id})" class="w-full bg-rose-50 hover:bg-rose-700 text-rose-700 hover:text-white border border-rose-200 font-medium py-2.5 rounded-xl text-sm transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-cart-plus"></i> কার্টে যোগ করুন
+                            </button>
+                        </div>
+                    </div>
+                `;
             });
         }
+
+        function filterCategory(category) {
+            currentCategory = category;
+            document.querySelectorAll('.cat-btn').forEach(btn => {
+                btn.classList.remove('bg-rose-700', 'text-white');
+                btn.classList.add('bg-white', 'text-neutral-700', 'border', 'border-neutral-200');
+            });
+            event.target.classList.remove('bg-white', 'text-neutral-700', 'border');
+            event.target.classList.add('bg-rose-700', 'text-white');
+            filterProducts();
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            let filtered = products;
+            if(currentCategory !== 'all') {
+                filtered = filtered.filter(p => p.category === currentCategory);
+            }
+            if(query) {
+                filtered = filtered.filter(p => p.name.toLowerCase().includes(query));
+            }
+            renderProducts(filtered);
+        }
+
+        // Cart Actions
+        function toggleCart() {
+            const drawer = document.getElementById('cartDrawer');
+            drawer.classList.toggle('hidden');
+            renderCartItems();
+        }
+
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existing = cart.find(item => item.id === productId);
+            if(existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({ ...product, qty: 1 });
+            }
+            updateCartCount();
+            renderCartItems();
+            toggleCart();
+        }
+
+        function updateCartCount() {
+            const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+            document.getElementById('cartCount').innerText = totalCount;
+        }
+
+        function changeQty(productId, delta) {
+            const item = cart.find(p => p.id === productId);
+            if(item) {
+                item.qty += delta;
+                if(item.qty <= 0) {
+                    cart = cart.filter(p => p.id !== productId);
+                }
+            }
+            updateCartCount();
+            renderCartItems();
+        }
+
+        function renderCartItems() {
+            const container = document.getElementById('cartItemsContainer');
+            const checkoutBtn = document.getElementById('checkoutBtn');
+            container.innerHTML = '';
+
+            if(cart.length === 0) {
+                container.innerHTML = `<p class="text-center text-neutral-400 py-12">আপনার ব্যাগটি খালি আছে।</p>`;
+                document.getElementById('cartTotal').innerText = '৳ ০';
+                checkoutBtn.disabled = true;
+                return;
+            }
+
+            checkoutBtn.disabled = false;
+            let subtotal = 0;
+            cart.forEach(item => {
+                subtotal += item.price * item.qty;
+                container.innerHTML += `
+                    <div class="flex items-center justify-between py-2">
+                        <div class="flex items-center space-x-3">
+                            <img src="${item.image}" class="w-12 h-12 object-cover rounded-lg">
+                            <div>
+                                <h4 class="text-sm font-semibold text-neutral-800 line-clamp-1">${item.name}</h4>
+                                <p class="text-xs text-rose-700 font-bold">৳ ${item.price} × ${item.qty}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="changeQty(${item.id}, -1)" class="w-7 h-7 bg-neutral-100 rounded-full font-bold text-sm">-</button>
+                            <span class="text-sm font-semibold">${item.qty}</span>
+                            <button onclick="changeQty(${item.id}, 1)" class="w-7 h-7 bg-neutral-100 rounded-full font-bold text-sm">+</button>
+                        </div>
+                    </div>
+                `;
+            });
+            document.getElementById('cartTotal').innerText = `৳ ${subtotal}`;
+        }
+
+        // --- DISTRICT & THANA LOGIC WITH 1000+ FREE DELIVERY RULE ---
+        const thanaList = {
+            Habiganj: [
+                { name: "হবিগঞ্জ শহর (Habiganj Town - Free Delivery)", fee: 0 },
+                { name: "হবিগঞ্জ সদর উপজেলা (Habiganj Sadar - ৳60)", fee: 60 },
+                { name: "নবীগঞ্জ (Nabiganj)", fee: 120 },
+                { name: "বাহুবল (Bahubal)", fee: 120 },
+                { name: "চুনারুঘাট (Chunarughat)", fee: 120 },
+                { name: "মাধবপুর (Madhabpur)", fee: 120 },
+                { name: "বানিয়াচং (Baniachang)", fee: 120 },
+                { name: "আজমিরীগঞ্জ (Ajmiriganj)", fee: 120 },
+                { name: "লাখাই (Lakhai)", fee: 120 },
+                { name: "শায়েস্তাগঞ্জ (Shayestaganj)", fee: 120 }
+            ],
+            Dhaka: [
+                { name: "ঢাকা মেট্রো (Dhaka City)", fee: 120 },
+                { name: "সাভার / কেরানীগঞ্জ (Savar / Keraniganj)", fee: 120 }
+            ],
+            Sylhet: [
+                { name: "সিলেট সদর / শহর (Sylhet Sadar)", fee: 120 },
+                { name: "অন্যান্য উপজেলা (Other Upazila)", fee: 120 }
+            ],
+            Chittagong: [
+                { name: "চট্টগ্রাম শহর (Chittagong City)", fee: 120 },
+                { name: "অন্যান্য উপজেলা (Other Upazila)", fee: 120 }
+            ],
+            Other: [
+                { name: "অন্যান্য জেলা ও থানা", fee: 120 }
+            ]
+        };
 
         function onDistrictChange() {
             const district = document.getElementById('custDistrict').value;
             const thanaSelect = document.getElementById('custThana');
-            selectedDistrict = district;
-            selectedThana = '';
-            
-            thanaSelect.innerHTML = '';
-            if (!district) {
-                thanaSelect.innerHTML = '<option value="">-- আগে জেলা নির্বাচন করুন --</option>';
-            } else {
-                thanaSelect.innerHTML = '<option value="">-- থানা নির্বাচন করুন --</option>';
-                locations[district].thanas.forEach(t => {
-                    const opt = document.createElement('option');
-                    opt.value = t;
-                    opt.textContent = t;
-                    thanaSelect.appendChild(opt);
+            thanaSelect.innerHTML = '<option value="">থানা / এলাকা সিলেক্ট করুন</option>';
+
+            if(thanaList[district]) {
+                thanaList[district].forEach(item => {
+                    thanaSelect.innerHTML += `<option value="${item.name}" data-fee="${item.fee}">${item.name}</option>`;
                 });
             }
-            updateDeliveryInfo();
-            updateCheckoutSummary();
-            renderCart();
+            updateTotal();
         }
 
-        function onThanaChange() {
-            selectedThana = document.getElementById('custThana').value;
-            updateDeliveryInfo();
-            updateCheckoutSummary();
-            renderCart();
-        }
-
-        function updateDeliveryInfo() {
-            const info = document.getElementById('deliveryInfo');
-            const amount = document.getElementById('deliveryChargeAmount');
-            const label = document.getElementById('deliveryAreaLabel');
-            
-            if (selectedDistrict && selectedThana) {
-                info.classList.remove('hidden');
-                const charge = getDeliveryCharge();
-                amount.textContent = `৳ ${charge}`;
-                label.textContent = `${selectedDistrict} › ${selectedThana}`;
-            } else {
-                info.classList.add('hidden');
-            }
-        }
-
-        function updateCheckoutSummary() {
-            const totals = calculateTotals();
-            document.getElementById('checkoutSubtotal').textContent = `৳ ${totals.subtotal}`;
-            document.getElementById('checkoutDelivery').textContent = totals.delivery === 0 ? 'ফ্রি' : `৳ ${totals.delivery}`;
-            document.getElementById('checkoutTotal').textContent = `৳ ${totals.total}`;
-            
-            const discRow = document.getElementById('checkoutDiscountRow');
-            if (totals.discount > 0) {
-                discRow.classList.remove('hidden');
-                document.getElementById('checkoutDiscount').textContent = `-৳ ${totals.discount}`;
-            } else {
-                discRow.classList.add('hidden');
-            }
-        }
-
-        // ==================== DARK MODE ====================
-        function toggleDarkMode() {
-            darkMode = !darkMode;
-            document.documentElement.classList.toggle('dark', darkMode);
-            localStorage.setItem('rn_dark', darkMode);
-            document.getElementById('darkIcon').className = darkMode 
-                ? 'fa-solid fa-sun text-amber-300' 
-                : 'fa-solid fa-moon text-neutral-600 dark:text-amber-300';
-        }
-
-        // ==================== COUNTER ====================
-        function animateCounters() {
-            const counters = document.querySelectorAll('[data-count]');
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const target = parseInt(el.dataset.count);
-                        let current = 0;
-                        const step = target / 50;
-                        const timer = setInterval(() => {
-                            current += step;
-                            if (current >= target) {
-                                el.textContent = target + '+';
-                                clearInterval(timer);
-                            } else {
-                                el.textContent = Math.floor(current);
-                            }
-                        }, 20);
-                        observer.unobserve(el);
-                    }
-                });
-            });
-            counters.forEach(c => observer.observe(c));
-        }
-
-        // ==================== PRODUCTS ====================
-        function renderStars(rating) {
-            const full = Math.floor(rating);
-            const half = rating - full >= 0.5;
-            let html = '';
-            for (let i = 0; i < full; i++) html += '★';
-            if (half) html += '⯨';
-            for (let i = full + (half ? 1 : 0); i < 5; i++) html += '☆';
-            return html;
-        }
-
-        function renderProducts(filterText = '') {
-            const grid = document.getElementById('productGrid');
-            grid.innerHTML = '';
-            const filtered = products.filter(p => {
-                const matchesCategory = currentCategory === 'all' || p.category === currentCategory;
-                const matchesSearch = p.name.toLowerCase().includes(filterText.toLowerCase());
-                return matchesCategory && matchesSearch;
-            });
-
-            if (filtered.length === 0) {
-                grid.innerHTML = `<div class="col-span-full text-center py-16"><div class="text-6xl mb-4">🔍</div><p class="text-neutral-500 dark:text-neutral-400 text-lg">কোনো প্রোডাক্ট পাওয়া যায়নি</p></div>`;
-                return;
+        function getDeliveryFee() {
+            const subtotal = getCartSubtotal();
+            // যদি কার্টের মোট মূল্য ১০০০ টাকা বা তার বেশি হয়, তবে ডেলিভারি একদম ফ্রি!
+            if (subtotal >= 1000) {
+                return 0;
             }
 
-            filtered.forEach((p, idx) => {
-                const discount = p.oldPrice ? Math.round(((p.oldPrice - p.price) / p.oldPrice) * 100) : 0;
-                grid.innerHTML += `
-                    <div class="product-card group bg-white dark:bg-neutral-900 rounded-3xl overflow-hidden border border-neutral-100 dark:border-neutral-800 hover:border-brand-200 dark:hover:border-brand-800 shadow-sm hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-500 hover:-translate-y-2" style="animation-delay: ${idx * 0.08}s;">
-                        <div class="relative h-56 overflow-hidden bg-neutral-100 dark:bg-neutral-800">
-                            <img src="${p.img}" alt="${p.name}" loading="lazy" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
-                            ${p.badge ? `<span class="absolute top-3 left-3 bg-gradient-to-r from-brand-600 to-pink-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">${p.badge}</span>` : ''}
-                            ${discount > 0 ? `<span class="absolute top-3 right-3 bg-amber-500 text-white text-xs font-bold px-2.5 py-1 rounded-full shadow-lg">-${discount}%</span>` : ''}
-                            <button onclick="openQuickView(${p.id})" class="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <span class="bg-white text-neutral-900 font-semibold px-6 py-2.5 rounded-full shadow-lg transform hover:scale-105 transition"><i class="fa-solid fa-eye mr-1"></i> Quick View</span>
-                            </button>
-                        </div>
-                        <div class="p-5">
-                            <h3 class="font-bold text-neutral-800 dark:text-neutral-100 text-base mb-1.5 truncate">${p.name}</h3>
-                            <div class="flex items-center gap-1.5 mb-3">
-                                <div class="text-amber-500 text-xs">${renderStars(p.rating)}</div>
-                                <span class="text-xs text-neutral-500 dark:text-neutral-400">(${p.reviews})</span>
-                            </div>
-                            <div class="flex items-baseline gap-2 mb-4">
-                                <span class="text-xl font-bold text-brand-700 dark:text-brand-400">৳ ${p.price}</span>
-                                ${p.oldPrice ? `<span class="text-sm text-neutral-400 line-through">৳ ${p.oldPrice}</span>` : ''}
-                            </div>
-                            <button onclick="addToCart(${p.id})" class="w-full bg-gradient-to-r from-brand-50 to-pink-50 dark:from-brand-950/50 dark:to-pink-950/50 hover:from-brand-600 hover:to-pink-600 text-brand-700 dark:text-brand-300 hover:text-white border border-brand-200 dark:border-brand-800 hover:border-transparent font-semibold py-2.5 rounded-xl text-sm transition-all duration-300 flex items-center justify-center gap-2 group/btn">
-                                <i class="fa-solid fa-cart-plus group-hover/btn:scale-110 transition"></i> ব্যাগে যোগ করুন
-                            </button>
-                        </div>
-                    </div>`;
-            });
-        }
-
-        function filterCategory(cat) {
-            currentCategory = cat;
-            document.querySelectorAll('.cat-btn').forEach(btn => btn.classList.remove('active-cat'));
-            const activeBtn = Array.from(document.querySelectorAll('.cat-btn')).find(btn => btn.getAttribute('onclick').includes(`'${cat}'`));
-            if (activeBtn) activeBtn.classList.add('active-cat');
-            renderProducts(document.getElementById('searchInput').value);
-        }
-
-        function filterProducts() {
-            renderProducts(document.getElementById('searchInput').value);
-        }
-
-        // ==================== QUICK VIEW ====================
-        function openQuickView(id) {
-            const p = products.find(x => x.id === id);
-            if (!p) return;
-            document.getElementById('qvImage').src = p.img;
-            document.getElementById('qvName').textContent = p.name;
-            document.getElementById('qvPrice').textContent = `৳ ${p.price}`;
-            document.getElementById('qvDesc').textContent = p.desc;
-            document.getElementById('qvRating').textContent = `${p.rating} (${p.reviews} রিভিউ)`;
-            document.getElementById('qvStars').innerHTML = renderStars(p.rating);
-            document.getElementById('qvBadge').textContent = p.badge || '';
-            document.getElementById('qvBadge').style.display = p.badge ? 'inline-block' : 'none';
-            document.getElementById('qvAddBtn').onclick = () => { addToCart(p.id); closeQuickView(); };
-            document.getElementById('quickViewModal').classList.remove('hidden');
-            document.body.classList.add('modal-open');
-        }
-
-        function closeQuickView() {
-            document.getElementById('quickViewModal').classList.add('hidden');
-            document.body.classList.remove('modal-open');
-        }
-
-        // ==================== CART ====================
-        function toggleCart() {
-            const drawer = document.getElementById('cartDrawer');
-            drawer.classList.toggle('hidden');
-            if (!drawer.classList.contains('hidden')) {
-                renderCart();
-                document.body.classList.add('modal-open');
-            } else {
-                document.body.classList.remove('modal-open');
+            const thanaSelect = document.getElementById('custThana');
+            const selectedOption = thanaSelect.options[thanaSelect.selectedIndex];
+            if(selectedOption && selectedOption.dataset.fee !== undefined) {
+                return parseInt(selectedOption.dataset.fee);
             }
+            return 0;
         }
 
-        function addToCart(id) {
-            const product = products.find(p => p.id === id);
-            const existing = cart.find(item => item.id === id);
-            if (existing) existing.qty += 1;
-            else cart.push({ ...product, qty: 1 });
-            saveCart();
-            updateCartCount();
-            showToast(`${product.name} ব্যাগে যোগ হয়েছে`);
-            const countEl = document.getElementById('cartCount');
-            countEl.classList.add('scale-150');
-            setTimeout(() => countEl.classList.remove('scale-150'), 300);
-        }
-
-        function updateQty(id, change) {
-            const item = cart.find(i => i.id === id);
-            if (!item) return;
-            item.qty += change;
-            if (item.qty <= 0) removeFromCart(id);
-            else { saveCart(); renderCart(); updateCartCount(); }
-        }
-
-        function removeFromCart(id) {
-            cart = cart.filter(item => item.id !== id);
-            saveCart();
-            renderCart();
-            updateCartCount();
-        }
-
-        function saveCart() { localStorage.setItem('rn_cart', JSON.stringify(cart)); }
-
-        function updateCartCount() {
-            const count = cart.reduce((t, i) => t + i.qty, 0);
-            document.getElementById('cartCount').textContent = count;
-            document.getElementById('mobileCartCount').textContent = count;
-        }
-
-        function calculateTotals() {
-            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
-            let discount = 0;
-            if (appliedCoupon) {
-                discount = appliedCoupon.type === 'percent' 
-                    ? Math.round(subtotal * (appliedCoupon.value / 100)) 
-                    : appliedCoupon.value;
-            }
-            // Free delivery চাইলে threshold ঠিক আছে, নাহলে সরাসরি charge
-            const delivery = subtotal >= FREE_DELIVERY_THRESHOLD || subtotal === 0 ? 0 : getDeliveryCharge();
-            return { subtotal, discount, delivery, total: subtotal - discount + delivery };
-        }
-
-        function renderCart() {
-            const container = document.getElementById('cartItemsContainer');
-            const subtotal = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
-            const progress = Math.min((subtotal / FREE_DELIVERY_THRESHOLD) * 100, 100);
-            document.getElementById('freeDeliveryBar').style.width = progress + '%';
-            const remaining = FREE_DELIVERY_THRESHOLD - subtotal;
-            const areaText = selectedDistrict && selectedThana 
-                ? `${selectedDistrict} › ${selectedThana} (৳${getDeliveryCharge()})` 
-                : 'এরিয়া নির্বাচন করুন';
-            document.getElementById('freeDeliveryText').innerHTML = remaining > 0
-                ? `ফ্রি ডেলিভারির জন্য আরো <span class="text-brand-600 dark:text-brand-400">৳${remaining}</span> প্রয়োজন <span class="text-neutral-400 text-[10px]">(${areaText})</span>`
-                : `<span class="text-emerald-600 dark:text-emerald-400">🎉 আপনি ফ্রি ডেলিভারি পাচ্ছেন!</span>`;
-
-            if (cart.length === 0) {
-                container.innerHTML = `
-                    <div class="text-center py-16 flex flex-col items-center gap-3">
-                        <div class="w-20 h-20 bg-neutral-100 dark:bg-neutral-800 rounded-full flex items-center justify-center"><i class="fa-solid fa-basket-shopping text-3xl text-neutral-300 dark:text-neutral-600"></i></div>
-                        <p class="font-semibold text-neutral-700 dark:text-neutral-300">আপনার ব্যাগ খালি</p>
-                        <p class="text-sm text-neutral-500 dark:text-neutral-400">শপ থেকে প্রোডাক্ট যোগ করুন</p>
-                        <button onclick="toggleCart()" class="mt-2 text-brand-600 dark:text-brand-400 font-semibold text-sm hover:underline">শপিং শুরু করুন →</button>
-                    </div>`;
-                document.getElementById('cartSubtotal').textContent = '৳ ০';
-                document.getElementById('cartDelivery').textContent = '৳ ০';
-                document.getElementById('cartTotal').textContent = '৳ ০';
-                document.getElementById('discountRow').classList.add('hidden');
-                document.getElementById('checkoutBtn').disabled = true;
-                return;
-            }
-
-            container.innerHTML = '';
-            cart.forEach(item => {
-                container.innerHTML += `
-                    <div class="flex items-center gap-3 bg-white dark:bg-neutral-800/50 rounded-2xl p-3 border border-neutral-100 dark:border-neutral-800">
-                        <img src="${item.img}" alt="${item.name}" class="w-16 h-16 rounded-xl object-cover border border-neutral-200 dark:border-neutral-700">
-                        <div class="flex-1 min-w-0">
-                            <h4 class="font-semibold text-sm text-neutral-800 dark:text-neutral-100 truncate">${item.name}</h4>
-                            <p class="text-brand-700 dark:text-brand-400 font-bold text-sm mt-0.5">৳ ${item.price}</p>
-                            <div class="flex items-center gap-2 mt-1.5">
-                                <div class="flex items-center bg-neutral-100 dark:bg-neutral-700 rounded-lg">
-                                    <button onclick="updateQty(${item.id}, -1)" class="w-7 h-7 flex items-center justify-center text-neutral-600 dark:text-neutral-300 hover:text-brand-600 font-bold rounded-l-lg hover:bg-neutral-200 dark:hover:bg-neutral-600 transition">−</button>
-                                    <span class="text-sm font-semibold w-7 text-center">${item.qty}</span>
-                                    <button onclick="updateQty(${item.id}, 1)" class="w-7 h-7 flex items-center justify-center text-neutral-600 dark:text-neutral-300 hover:text-brand-600 font-bold rounded-r-lg hover:bg-neutral-200 dark:hover:bg-neutral-600 transition">+</button>
-                                </div>
-                            </div>
-                        </div>
-                        <button onclick="removeFromCart(${item.id})" class="w-8 h-8 flex items-center justify-center text-red-400 hover:text-red-600 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-lg transition"><i class="fa-regular fa-trash-can text-sm"></i></button>
-                    </div>`;
-            });
-
-            const totals = calculateTotals();
-            document.getElementById('cartSubtotal').textContent = `৳ ${totals.subtotal}`;
-            document.getElementById('cartDelivery').textContent = totals.delivery === 0 ? 'ফ্রি' : `৳ ${totals.delivery}`;
-            document.getElementById('cartTotal').textContent = `৳ ${totals.total}`;
-            
-            if (totals.discount > 0) {
-                document.getElementById('discountRow').classList.remove('hidden');
-                document.getElementById('cartDiscount').textContent = `-৳ ${totals.discount}`;
-            } else {
-                document.getElementById('discountRow').classList.add('hidden');
-            }
-            document.getElementById('checkoutBtn').disabled = false;
-            
-            // Checkout summary update
-            if (!document.getElementById('checkoutModal').classList.contains('hidden')) {
-                updateCheckoutSummary();
-            }
-        }
-
-        // ==================== COUPON ====================
-        function applyCoupon() {
-            const code = document.getElementById('couponInput').value.trim().toUpperCase();
-            const msg = document.getElementById('couponMsg');
-            if (!code) {
-                msg.textContent = 'কুপন কোড দিন';
-                msg.className = 'text-xs mb-3 text-red-500';
-                msg.classList.remove('hidden');
-                return;
-            }
-            if (COUPONS[code]) {
-                appliedCoupon = { ...COUPONS[code], code };
-                msg.innerHTML = `<i class="fa-solid fa-check-circle mr-1"></i> কুপন প্রয়োগ হয়েছে: ${COUPONS[code].label}`;
-                msg.className = 'text-xs mb-3 text-emerald-600 dark:text-emerald-400';
-                msg.classList.remove('hidden');
-                renderCart();
-            } else {
-                msg.innerHTML = `<i class="fa-solid fa-times-circle mr-1"></i> ভুল কুপন কোড`;
-                msg.className = 'text-xs mb-3 text-red-500';
-                msg.classList.remove('hidden');
-                appliedCoupon = null;
-                renderCart();
-            }
-        }
-
-        // ==================== CHECKOUT ====================
         function openCheckoutModal() {
-            if (cart.length === 0) return;
-            document.getElementById('cartDrawer').classList.add('hidden');
-            document.getElementById('checkoutModal').classList.remove('hidden');
-            document.body.classList.add('modal-open');
-            if (currentUser) {
-                document.getElementById('custName').value = currentUser.name || '';
+            if(cart.length === 0) return;
+            const currentUser = JSON.parse(localStorage.getItem('roselle_logged_user'));
+            if(!currentUser) {
+                alert('অর্ডার করতে হলে প্রথমে আপনার অ্যাকাউন্টে লগইন করুন!');
+                toggleCart();
+                openAuthModal();
+                return;
             }
-            updateDeliveryInfo();
-            updateCheckoutSummary();
+            toggleCart();
+            document.getElementById('checkoutModal').classList.remove('hidden');
+            document.getElementById('custName').value = currentUser.name;
+            document.getElementById('custPhone').value = currentUser.phone;
+            updateTotal();
         }
 
         function closeCheckoutModal() {
             document.getElementById('checkoutModal').classList.add('hidden');
-            document.body.classList.remove('modal-open');
         }
 
+        function toggleTrxField() {
+            const method = document.getElementById('paymentMethod').value;
+            const trxContainer = document.getElementById('trxContainer');
+            if(method === 'Bkash' || method === 'Nagad') {
+                trxContainer.classList.remove('hidden');
+                document.getElementById('trxId').required = true;
+            } else {
+                trxContainer.classList.add('hidden');
+                document.getElementById('trxId').required = false;
+            }
+        }
+
+        function getCartSubtotal() {
+            return cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+        }
+
+        function updateTotal() {
+            const subtotal = getCartSubtotal();
+            const deliveryFee = getDeliveryFee();
+            const finalTotal = subtotal + deliveryFee;
+
+            document.getElementById('modalSubtotal').innerText = `৳ ${subtotal}`;
+            
+            if (subtotal >= 1000) {
+                document.getElementById('deliveryChargeText').innerHTML = `<span class="text-green-600 font-bold">🎉 ১০০০+ টাকার জন্য ফ্রি ডেলিভারি (৳ ০)</span>`;
+            } else {
+                document.getElementById('deliveryChargeText').innerText = deliveryFee === 0 ? 'ফ্রি (৳ ০)' : `৳ ${deliveryFee}`;
+            }
+
+            document.getElementById('modalFinalTotal').innerText = `৳ ${finalTotal}`;
+        }
+
+        // Order Submit
         function submitOrder(e) {
             e.preventDefault();
-            if (!selectedDistrict || !selectedThana) {
-                showToast('জেলা ও থানা নির্বাচন করুন');
-                return;
-            }
+            const currentUser = JSON.parse(localStorage.getItem('roselle_logged_user'));
             const name = document.getElementById('custName').value;
             const phone = document.getElementById('custPhone').value;
+            const district = document.getElementById('custDistrict').value;
+            const thanaSelect = document.getElementById('custThana');
+            const thanaName = thanaSelect.value;
             const address = document.getElementById('custAddress').value;
-            const payment = document.querySelector('input[name="payment"]:checked').value;
-            const totals = calculateTotals();
-            const orderId = 'RN' + Date.now().toString().slice(-8);
-            const paymentLabels = { cod: 'ক্যাশ অন ডেলিভারি', bkash: 'বিকাশ', nagad: 'নগদ' };
             
-            showToast(`🎉 অর্ডার #${orderId} সফল! মোট: ৳${totals.total}`);
-            
-            setTimeout(() => {
-                alert(`✅ অর্ডার কনফার্ম!\n\nঅর্ডার ID: ${orderId}\nনাম: ${name}\nফোন: ${phone}\nজেলা: ${selectedDistrict}\nথানা: ${selectedThana}\nঠিকানা: ${address}\nপেমেন্ট: ${paymentLabels[payment]}\n\nসাবটোটাল: ৳${totals.subtotal}\nডিসকাউন্ট: ৳${totals.discount}\nডেলিভারি: ${totals.delivery === 0 ? 'ফ্রি' : '৳' + totals.delivery}\nমোট: ৳${totals.total}\n\nশীঘ্রই আমরা আপনার সাথে যোগাযোগ করব।`);
-            }, 500);
-            
-            // Reset
-            cart = [];
-            appliedCoupon = null;
-            saveCart();
-            updateCartCount();
-            renderCart();
+            const deliveryFee = getDeliveryFee();
+            const paymentMethod = document.getElementById('paymentMethod').value;
+            const trxId = document.getElementById('trxId').value || 'N/A';
+            const total = getCartSubtotal() + deliveryFee;
+
+            const orderId = 'RN-' + Math.floor(100000 + Math.random() * 900000);
+            const orderDate = new Date().toLocaleString('bn-BD');
+            let itemsSummary = cart.map(i => `${i.name} (x${i.qty})`).join(', ');
+
+            const fullAddress = `জেলা: ${district}, থানা: ${thanaName}, ঠিকানা: ${address}`;
+
+            const newOrder = {
+                id: orderId,
+                date: orderDate,
+                userPhone: currentUser ? currentUser.phone : phone,
+                name: name,
+                phone: phone,
+                address: fullAddress,
+                items: itemsSummary,
+                total: total,
+                payment: paymentMethod + (paymentMethod !== 'COD' ? ` (TrxID: ${trxId})` : ''),
+                status: 'Pending'
+            };
+
+            let existingOrders = JSON.parse(localStorage.getItem('roselle_orders')) || [];
+            existingOrders.unshift(newOrder);
+            localStorage.setItem('roselle_orders', JSON.stringify(existingOrders));
+
+            let waText = `🛍️ *NEW ORDER - ROSELLE NOHA*\n`;
+            waText += `━━━━━━━━━━━━━━━━━━━━━\n`;
+            waText += `🆔 *Order ID:* ${orderId}\n`;
+            waText += `👤 *Customer:* ${name}\n`;
+            waText += `📞 *Phone:* ${phone}\n`;
+            waText += `📍 *Location:* জেলা: ${district}, থানা: ${thanaName}\n`;
+            waText += `🏠 *Address:* ${address}\n`;
+            waText += `📦 *Items:* ${itemsSummary}\n`;
+            waText += `🚚 *Delivery Fee:* ${deliveryFee === 0 ? 'Free (৳0)' : '৳ ' + deliveryFee}\n`;
+            waText += `💳 *Payment:* ${paymentMethod} ${paymentMethod !== 'COD' ? '(TrxID: ' + trxId + ')' : ''}\n`;
+            waText += `💰 *Total Amount:* ৳ ${total}\n`;
+            waText += `━━━━━━━━━━━━━━━━━━━━━\n`;
+            waText += `ধন্যবাদ! অর্ডারটি প্রসেস করুন।`;
+
+            const waLink = `https://wa.me/${MY_WHATSAPP_NUMBER}?text=${encodeURIComponent(waText)}`;
+            document.getElementById('whatsappSendBtn').href = waLink;
+
+            let summaryHtml = `
+                <strong>অর্ডার আইডি:</strong> ${orderId}<br>
+                <strong>নাম:</strong> ${name}<br>
+                <strong>ফোন:</strong> ${phone}<br>
+                <strong>এলাকা:</strong> ${thanaName}, ${district}<br>
+                <strong>মোট মূল্য:</strong> ৳ ${total} ${deliveryFee === 0 ? '(ডেলিভারি ফ্রি)' : ''}
+            `;
+
+            document.getElementById('orderSummaryText').innerHTML = summaryHtml;
             closeCheckoutModal();
+            document.getElementById('successModal').classList.remove('hidden');
+
+            cart = [];
+            updateCartCount();
             document.getElementById('orderForm').reset();
-            document.getElementById('couponMsg').classList.add('hidden');
-            document.getElementById('couponInput').value = '';
-            document.getElementById('custThana').innerHTML = '<option value="">-- আগে জেলা নির্বাচন করুন --</option>';
-            document.getElementById('deliveryInfo').classList.add('hidden');
-            selectedDistrict = '';
-            selectedThana = '';
         }
 
-        // ==================== AUTH ====================
-        function openAuthModal(mode) {
-            if (currentUser) {
-                if (confirm(`${currentUser.name}, আপনি লগআউট করতে চান?`)) {
-                    currentUser = null;
-                    localStorage.removeItem('rn_user');
-                    initUser();
-                    showToast('লগআউট হয়েছে');
-                }
-                return;
+        function closeSuccessModal() {
+            document.getElementById('successModal').classList.add('hidden');
+        }
+
+        // *** CLIENT AUTHENTICATION LOGIC ***
+        function openAuthModal() {
+            const currentUser = JSON.parse(localStorage.getItem('roselle_logged_user'));
+            if(currentUser) {
+                openClientDashboard();
+            } else {
+                document.getElementById('authModal').classList.remove('hidden');
             }
-            authMode = mode;
-            document.getElementById('authModal').classList.remove('hidden');
-            document.body.classList.add('modal-open');
-            updateAuthUI();
         }
 
         function closeAuthModal() {
             document.getElementById('authModal').classList.add('hidden');
-            document.body.classList.remove('modal-open');
+            document.getElementById('authError').classList.add('hidden');
             document.getElementById('authForm').reset();
         }
 
         function toggleAuthMode() {
-            authMode = authMode === 'login' ? 'signup' : 'login';
-            updateAuthUI();
+            isRegisterMode = !isRegisterMode;
+            const title = document.getElementById('authTitle');
+            const nameGroup = document.getElementById('nameFieldGroup');
+            const submitBtn = document.getElementById('authSubmitBtn');
+            const toggleText = document.getElementById('authToggleText');
+            const toggleBtn = document.getElementById('authToggleBtn');
+
+            if(isRegisterMode) {
+                title.innerText = "নতুন অ্যাকাউন্ট তৈরি";
+                nameGroup.classList.remove('hidden');
+                document.getElementById('authName').required = true;
+                submitBtn.innerText = "রেজিস্ট্রেশন করুন";
+                toggleText.innerText = "আগে থেকেই অ্যাকাউন্ট আছে?";
+                toggleBtn.innerText = "লগইন করুন";
+            } else {
+                title.innerText = "কাস্টমার লগইন";
+                nameGroup.classList.add('hidden');
+                document.getElementById('authName').required = false;
+                submitBtn.innerText = "লগইন করুন";
+                toggleText.innerText = "অ্যাকাউন্ট নেই?";
+                toggleBtn.innerText = "রেজিস্ট্রেশন করুন";
+            }
+            document.getElementById('authError').classList.add('hidden');
+        }
+
+        function handleAuthSubmit(e) {
+            e.preventDefault();
+            const phone = document.getElementById('authPhone').value;
+            const password = document.getElementById('authPassword').value;
+            const errorEl = document.getElementById('authError');
+            let users = JSON.parse(localStorage.getItem('roselle_users')) || [];
+
+            if(isRegisterMode) {
+                const name = document.getElementById('authName').value;
+                const existingUser = users.find(u => u.phone === phone);
+                if(existingUser) {
+                    errorEl.innerText = "এই নম্বরে ইতিমধ্যে একটি অ্যাকাউন্ট রয়েছে!";
+                    errorEl.classList.remove('hidden');
+                    return;
+                }
+                const newUser = { name, phone, password };
+                users.push(newUser);
+                localStorage.setItem('roselle_users', JSON.stringify(users));
+                localStorage.setItem('roselle_logged_user', JSON.stringify(newUser));
+                closeAuthModal();
+                updateAuthUI();
+                alert('সফলভাবে রেজিস্ট্রেশন সম্পন্ন হয়েছে!');
+            } else {
+                const user = users.find(u => u.phone === phone && u.password === password);
+                if(!user) {
+                    errorEl.innerText = "মোবাইল নম্বর অথবা পাসওয়ার্ড ভুল হয়েছে!";
+                    errorEl.classList.remove('hidden');
+                    return;
+                }
+                localStorage.setItem('roselle_logged_user', JSON.stringify(user));
+                closeAuthModal();
+                updateAuthUI();
+            }
         }
 
         function updateAuthUI() {
-            const isLogin = authMode === 'login';
-            document.getElementById('authTitle').innerText = isLogin ? 'লগইন করুন' : 'সাইনআপ করুন';
-            document.getElementById('authSubmitBtn').innerText = isLogin ? 'লগইন' : 'রেজিস্ট্রেশন';
-            document.getElementById('authToggleText').innerText = isLogin ? 'একাউন্ট নেই?' : 'ইতিমধ্যে একাউন্ট আছে?';
-            document.getElementById('authToggleBtn').innerText = isLogin ? 'সাইনআপ করুন' : 'লগইন করুন';
-            document.getElementById('authIcon').className = isLogin 
-                ? 'fa-solid fa-user text-2xl text-brand-600 dark:text-brand-400'
-                : 'fa-solid fa-user-plus text-2xl text-brand-600 dark:text-brand-400';
-        }
-
-        function handleAuth(e) {
-            e.preventDefault();
-            const email = document.getElementById('authEmail').value;
-            const name = email.split('@')[0];
-            currentUser = { name: name.charAt(0).toUpperCase() + name.slice(1), email };
-            localStorage.setItem('rn_user', JSON.stringify(currentUser));
-            initUser();
-            showToast(authMode === 'login' ? 'সফলভাবে লগইন হয়েছে!' : 'একাউন্ট তৈরি হয়েছে!');
-            closeAuthModal();
-        }
-
-        function initUser() {
-            const text = document.getElementById('userNavText');
-            const icon = document.getElementById('userIcon');
-            if (currentUser) {
-                text.textContent = currentUser.name;
-                icon.className = 'fa-solid fa-user-check text-emerald-600 dark:text-emerald-400';
+            const currentUser = JSON.parse(localStorage.getItem('roselle_logged_user'));
+            const btnText = document.getElementById('authBtnText');
+            if(currentUser) {
+                btnText.innerText = currentUser.name.split(' ')[0];
             } else {
-                text.textContent = 'লগইন';
-                icon.className = 'fa-solid fa-user text-brand-600 dark:text-brand-400';
+                btnText.innerText = "লগইন / রেজিস্টার";
             }
         }
 
-        // ==================== TOAST ====================
-        let toastTimeout;
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            document.getElementById('toastMsg').textContent = message;
-            toast.classList.remove('opacity-0', 'translate-y-4');
-            toast.classList.add('opacity-100', 'translate-y-0');
-            clearTimeout(toastTimeout);
-            toastTimeout = setTimeout(() => {
-                toast.classList.add('opacity-0', 'translate-y-4');
-                toast.classList.remove('opacity-100', 'translate-y-0');
-            }, 3000);
+        function logoutClient() {
+            localStorage.removeItem('roselle_logged_user');
+            updateAuthUI();
+            closeClientDashboard();
+            alert('সফলভাবে লগআউট করা হয়েছে।');
         }
 
-        // ==================== KEYBOARD ====================
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                document.getElementById('quickViewModal').classList.add('hidden');
-                document.getElementById('cartDrawer').classList.add('hidden');
-                document.getElementById('checkoutModal').classList.add('hidden');
-                document.getElementById('authModal').classList.add('hidden');
-                document.body.classList.remove('modal-open');
+        function openClientDashboard() {
+            const currentUser = JSON.parse(localStorage.getItem('roselle_logged_user'));
+            if(!currentUser) {
+                openAuthModal();
+                return;
             }
-        });
+            document.getElementById('clientWelcomeText').innerText = `নাম: ${currentUser.name} | ফোন: ${currentUser.phone}`;
+            loadClientOrders(currentUser.phone);
+            document.getElementById('clientDashboardModal').classList.remove('hidden');
+        }
+
+        function closeClientDashboard() {
+            document.getElementById('clientDashboardModal').classList.add('hidden');
+        }
+
+        function loadClientOrders(userPhone) {
+            const table = document.getElementById('clientOrderTable');
+            let orders = JSON.parse(localStorage.getItem('roselle_orders')) || [];
+            let myOrders = orders.filter(o => o.userPhone === userPhone);
+
+            if(myOrders.length === 0) {
+                table.innerHTML = `<tr><td colspan="6" class="text-center py-8 text-neutral-400">আপনি এখনো কোনো অর্ডার করেননি।</td></tr>`;
+                return;
+            }
+
+            table.innerHTML = '';
+            myOrders.forEach(order => {
+                let statusBg = order.status === 'Pending' ? 'bg-amber-100 text-amber-800' : 'bg-green-100 text-green-800';
+                table.innerHTML += `
+                    <tr class="hover:bg-neutral-50 transition">
+                        <td class="p-3 font-bold text-rose-700">${order.id}</td>
+                        <td class="p-3 text-xs text-neutral-500">${order.date}</td>
+                        <td class="p-3 text-xs text-neutral-700 font-medium max-w-xs">${order.items}</td>
+                        <td class="p-3 font-bold text-neutral-900">৳ ${order.total}</td>
+                        <td class="p-3 text-xs font-semibold">${order.payment}</td>
+                        <td class="p-3 text-center">
+                            <span class="px-2.5 py-1 rounded-full text-xs font-bold ${statusBg}">${order.status}</span>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        // *** ADMIN LOGIN & PANEL LOGIC ***
+        function closeAdminAuthModal() {
+            document.getElementById('adminAuthModal').classList.add('hidden');
+            document.getElementById('loginError').classList.add('hidden');
+            document.getElementById('adminPassword').value = '';
+            window.location.hash = '';
+        }
+
+        function handleAdminLogin(e) {
+            e.preventDefault();
+            const adminPwd = document.getElementById('adminPassword').value;
+            if(adminPwd === ADMIN_SECRET_KEY) {
+                closeAdminAuthModal();
+                loadAdminOrders();
+                document.getElementById('adminPanelModal').classList.remove('hidden');
+            } else {
+                document.getElementById('loginError').classList.remove('hidden');
+            }
+        }
+
+        function closeAdminPanel() {
+            document.getElementById('adminPanelModal').classList.add('hidden');
+            window.location.hash = '';
+        }
+
+        function loadAdminOrders() {
+            const table = document.getElementById('adminOrderTable');
+            let orders = JSON.parse(localStorage.getItem('roselle_orders')) || [];
+
+            if(orders.length === 0) {
+                table.innerHTML = `<tr><td colspan="8" class="text-center py-8 text-neutral-400">কোনো অর্ডার পাওয়া যায়নি।</td></tr>`;
+                return;
+            }
+
+            table.innerHTML = '';
+            orders.forEach((order, index) => {
+                let statusBg = order.status === 'Pending' ? 'bg-amber-100 text-amber-800' : 'bg-green-100 text-green-800';
+                table.innerHTML += `
+                    <tr class="hover:bg-neutral-50 transition">
+                        <td class="p-3 font-bold text-rose-700">${order.id}</td>
+                        <td class="p-3 text-xs text-neutral-500">${order.date}</td>
+                        <td class="p-3">
+                            <div class="font-semibold text-neutral-800">${order.name}</div>
+                            <div class="text-xs text-neutral-500">${order.phone}</div>
+                            <div class="text-xs text-neutral-400 line-clamp-1">${order.address}</div>
+                        </td>
+                        <td class="p-3 text-xs text-neutral-700 font-medium max-w-xs">${order.items}</td>
+                        <td class="p-3 font-bold text-neutral-900">৳ ${order.total}</td>
+                        <td class="p-3 text-xs font-semibold">${order.payment}</td>
+                        <td class="p-3">
+                            <button onclick="toggleStatus(${index})" class="px-2.5 py-1 rounded-full text-xs font-bold ${statusBg}">
+                                ${order.status}
+                            </button>
+                        </td>
+                        <td class="p-3 text-center">
+                            <button onclick="deleteOrder(${index})" class="text-red-600 hover:text-red-800 font-bold p-1">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                `;
+            });
+        }
+
+        function toggleStatus(index) {
+            let orders = JSON.parse(localStorage.getItem('roselle_orders')) || [];
+            orders[index].status = orders[index].status === 'Pending' ? 'Delivered' : 'Pending';
+            localStorage.setItem('roselle_orders', JSON.stringify(orders));
+            loadAdminOrders();
+        }
+
+        function deleteOrder(index) {
+            if(confirm('আপনি কি এই অর্ডারটি মুছে ফেলতে চান?')) {
+                let orders = JSON.parse(localStorage.getItem('roselle_orders')) || [];
+                orders.splice(index, 1);
+                localStorage.setItem('roselle_orders', JSON.stringify(orders));
+                loadAdminOrders();
+            }
+        }
+
+        function clearAllOrders() {
+            if(confirm('আপনি কি সকল অর্ডার ডাটাবেস থেকে মুছে ফেলতে চান?')) {
+                localStorage.removeItem('roselle_orders');
+                loadAdminOrders();
+            }
+        }
+
+        // Initial Load
+        renderProducts(products);
     </script>
 </body>
 </html>
